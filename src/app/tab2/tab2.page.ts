@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Team, Teams } from '../config/teams';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class Tab2Page {
+
+  teams: Team[] = Teams;
 
   constructor() {}
 

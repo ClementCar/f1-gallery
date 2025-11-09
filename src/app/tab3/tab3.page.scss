@@ -1,0 +1,33 @@
+section{
+    padding-top: 100px;
+    flex-wrap: wrap;
+}
+
+ion-row{
+    width: 70%;
+    margin: 0 auto;
+}
+
+ion-col{
+    overflow: hidden;
+    &:nth-child(2n) {
+        transform: translateY(30px);
+    }
+    &:nth-child(2n+1){
+        transform: translateY(0);
+    }
+    & img{
+        position: absolute;
+        top: 0;
+        right: -60px;
+    }
+}
+
+ion-card{
+    border: 20px solid var(--ion-color-white);
+    height: 200px;
+    border-radius: 75px 0 0 0;
+    border-bottom: 0;
+    border-right: 0;
+    --background: transparent;
+}

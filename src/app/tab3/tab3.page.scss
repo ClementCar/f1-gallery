@@ -10,12 +10,12 @@ ion-row{
 
 ion-col{
     overflow: hidden;
-    &:nth-child(2n) {
-        transform: translateY(30px);
-    }
-    &:nth-child(2n+1){
-        transform: translateY(0);
-    }
+    // &:nth-child(2n) {
+    //     transform: translateY(30px);
+    // }
+    // &:nth-child(2n+1){
+    //     transform: translateY(0);
+    // }
     & img{
         position: absolute;
         top: 0;

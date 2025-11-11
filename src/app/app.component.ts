@@ -8,11 +8,11 @@ import { TranslateService } from '@ngx-translate/core';
   standalone: false,
 })
 export class AppComponent {
-  constructor(private translate: TranslateService) {
-    translate.addLangs(['en', 'fr']);
-    translate.setFallbackLang('fr');
+  constructor(private translateService: TranslateService) {
+    this.translateService.addLangs(['en', 'fr']);
+    this.translateService.setFallbackLang('fr');
 
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang?.match(/en|fr/) ? browserLang : 'fr');
+    const browserLang = this.translateService.getBrowserLang();
+    this.translateService.use(browserLang?.match(/en|fr/) ? browserLang : 'fr');
   }
 }

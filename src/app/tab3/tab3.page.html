@@ -1,6 +1,9 @@
 <ion-content class="page-content" [fullscreen]="true">
   <ion-row>
-    @for (driver of drivers; track driver.name) {
+    <!-- <ion-col size="4">
+      <div class="test"></div>
+    </ion-col> -->
+    <!-- @for (driver of drivers; track driver.name) {
         <ion-col size="4">
           <ion-card>
               <ion-card-header>
@@ -9,6 +12,24 @@
             </ion-card>
             <img [src]="'/assets/drivers/' + getText(driver.lastname) + '.avif'" alt="">
         </ion-col>
+      } -->
+
+  
+      @for (team of teams; track team.name) {
+        @for (driver of team.drivers; track driver.name) {
+          <ion-col size="4">
+            <ion-card (click)="selectDriver()" [style.--base]="team.color" [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
+              <ion-card-header>
+                <ion-card-title>
+                  {{ driver.name }} <br>
+                  <strong>{{ driver.lastname }}</strong>
+                </ion-card-title>
+              </ion-card-header>
+              <img class="number" [src]="'/assets/drivers/' + getText(driver.lastname) + '/number.avif'" alt="">
+              <img class="picture" [src]="'/assets/drivers/' + getText(driver.lastname) + '/picture.avif'" alt="">
+            </ion-card>
+          </ion-col>
+        }
       }
   </ion-row>
 </ion-content>

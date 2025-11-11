@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Driver } from '../config/teams';
+import { Driver, Team, Teams } from '../config/teams';
 import { DriversService } from '../services/drivers';
 import { UtilityService } from '../services/utility';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -10,9 +11,11 @@ import { UtilityService } from '../services/utility';
   standalone: false,
 })
 export class Tab3Page implements OnInit {
+  teams: Team[] = Teams;
   drivers!: Driver[];
 
-  constructor(private driverService: DriversService, private utilityService: UtilityService) {}
+  constructor(private driverService: DriversService, private utilityService: UtilityService,
+              private route: Router ) {}
 
   ngOnInit(): void {
     this.drivers = this.driverService.getOrderedDriver();
@@ -20,6 +23,14 @@ export class Tab3Page implements OnInit {
 
   getText(text: string){
     return this.utilityService.getLowerText(text);
+  }
+
+  lightenDarkenColor(col: string, amt: number): string {
+    return this.utilityService.getlightenDarkenColor(col, amt);
+  }
+
+  selectDriver() {
+    this.route.navigate(['driver-info']);
   }
 
 }

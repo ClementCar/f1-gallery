@@ -11,6 +11,9 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CustomHttpLoader } from './translate/custom-http-loader';
+import { DriverInfoComponent } from './components/driver-info/driver-info.component';
+import { TeamInfoComponent } from './components/team-info/team-info.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -19,7 +22,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DriverInfoComponent, TeamInfoComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
@@ -27,8 +30,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
+        useClass: CustomHttpLoader
       }
     })
   ],

@@ -4,7 +4,7 @@ section{
 }
 
 ion-row{
-    width: 70%;
+    // width: 70%;
     margin: 0 auto;
 }
 
@@ -16,18 +16,95 @@ ion-col{
     // &:nth-child(2n+1){
     //     transform: translateY(0);
     // }
-    & img{
-        position: absolute;
-        top: 0;
-        right: -60px;
-    }
 }
 
-ion-card{
-    border: 20px solid var(--ion-color-white);
+.picture{
+    position: absolute;
+    top: 0;
+    right: -5px;
+    height: 220%;
+}
+
+.number{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    opacity: .8;
+    z-index: 0;
+}
+
+ion-card {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  border-radius: 16px;
+  --background: linear-gradient(135deg, var(--base) 0%, var(--light) 55%, var(--dark) 100%);
+}
+
+.test{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
     height: 200px;
-    border-radius: 75px 0 0 0;
-    border-bottom: 0;
-    border-right: 0;
-    --background: transparent;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #00482c 0%, #006a3a 55%, #012b1a 100%);
+}
+
+.test::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background-image:
+    repeating-linear-gradient(
+      130deg,
+      rgba(255, 255, 255, 0.35) 0px,
+      rgba(255, 255, 255, 0.35) 1px,
+      rgba(255, 255, 255, 0.15) 2px,
+      transparent 8px
+    );
+  transform: rotate(-10deg) scale(2);
+  mix-blend-mode: screen;
+  filter: blur(2px) brightness(1.4);
+  opacity: 0.8;
+  animation: streaksMove 3s linear infinite;
+}
+
+.test::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 70% 20%,
+      rgba(255, 255, 255, 0.15),
+      transparent 70%
+    ),
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(0, 0, 0, 0.3)
+    );
+  mix-blend-mode: overlay;
+}
+
+@keyframes speedlines {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 100%;
+  }
+}
+
+
+
+/* Animation du motif */
+@keyframes streaksMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 100%;
+  }
 }

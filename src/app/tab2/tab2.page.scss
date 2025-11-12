@@ -1,4 +1,28 @@
-section{
-    padding-top: 100px;
-    flex-wrap: wrap;
+ion-row{
+    // width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+
+}
+
+ion-col{
+    overflow: hidden;
+}
+
+ion-card {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  border-radius: 16px;
+  cursor: pointer;
+//   --background: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png"), linear-gradient(135deg, var(--base) 0%, var(--light) 55%, var(--dark) 100%);
+//   background-blend-mode: color-burn;
+  transition: all .4s ease;
+  & strong{
+    font-weight: 900;
+    color: var(--ion-color-white);
+  }
+  &:hover{
+    // box-shadow: 0px 10px 13px -7px var(--light);
+  }
 }

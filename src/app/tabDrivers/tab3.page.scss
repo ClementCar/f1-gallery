@@ -5,49 +5,6 @@ ion-row{
 
 }
 
-ion-col{
-    overflow: hidden;
-}
-
-.picture{
-    position: absolute;
-    top: 0;
-    right: -5px;
-    height: 220%;
-}
-
-.number{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 70%;
-    opacity: .7;
-    z-index: 0;
-}
-
-ion-card {
-  position: relative;
-  overflow: hidden;
-  height: 200px;
-  border-radius: 16px;
-  cursor: pointer;
-  --background: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png"), linear-gradient(135deg, var(--base) 0%, var(--light) 55%, var(--dark) 100%);
-  background-blend-mode: color-burn;
-  transition: all .4s ease;
-  & strong{
-    font-weight: 900;
-    color: var(--ion-color-white);
-  }
-  &:hover{
-    box-shadow: 0px 10px 13px -7px var(--light);
-  }
-}
-
-// ! test
-//url("https://www.transparenttextures.com/patterns/dark-wood.png");
-//url("https://www.transparenttextures.com/patterns/brushed-alum.png")
-//url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png"); //!not bad
 
 .test{
     width: 100%;

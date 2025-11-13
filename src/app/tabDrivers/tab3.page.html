@@ -1,0 +1,11 @@
+<ion-content class="page-content" [fullscreen]="true">
+  <ion-row>
+      @for (team of teams; track team.name) {
+        @for (driver of team.drivers; track driver.name) {
+          <ion-col size="12" sizeSm="6" sizeMd="4" sizeLg="3">
+            <app-driver-card [team]="team" [driver]="driver" (select)="selectDriver()"></app-driver-card>
+          </ion-col>
+        }
+      }
+  </ion-row>
+</ion-content>

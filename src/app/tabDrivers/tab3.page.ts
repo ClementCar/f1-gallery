@@ -21,14 +21,6 @@ export class Tab3Page implements OnInit {
     this.drivers = this.driverService.getOrderedDriver();
   }
 
-  getText(text: string){
-    return this.utilityService.getLowerText(text);
-  }
-
-  lightenDarkenColor(col: string, amt: number): string {
-    return this.utilityService.getlightenDarkenColor(col, amt);
-  }
-
   selectDriver() {
     this.route.navigate(['driver-info']);
   }

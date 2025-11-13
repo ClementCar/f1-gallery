@@ -1,0 +1,45 @@
+ion-row{
+    // width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+
+}
+
+ion-card {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  border-radius: 16px;
+  cursor: pointer;
+  --background: url("https://www.transparenttextures.com/patterns/lined-paper-2.png"), linear-gradient(-1deg, var(--base) 0%, var(--light) 30%, var(--dark) 92%);
+//   background-blend-mode: color-burn;
+  transition: all .4s ease;
+  & strong{
+    font-weight: 900;
+    color: var(--ion-color-white);
+  }
+  &:hover{
+    // box-shadow: 0px 10px 13px -7px var(--light);
+  }
+}
+
+// url("https://www.transparenttextures.com/patterns/lined-paper-2.png")
+// url("https://www.transparenttextures.com/patterns/brick-wall-dark.png")
+// url("https://www.transparenttextures.com/patterns/notebook-dark.png") // TODO
+
+.car{
+  position: absolute;
+  left: 16px;
+  bottom: 30px;
+  width: 80%;
+}
+
+.logo{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    opacity: .7;
+    z-index: -1;
+}

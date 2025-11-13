@@ -1,0 +1,65 @@
+ion-card {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  border-radius: 16px;
+  cursor: pointer;
+  --background: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png"), linear-gradient(135deg, var(--base) 0%, var(--light) 55%, var(--dark) 100%);
+  background-blend-mode: color-burn;
+  transition: all .4s ease;
+  & ion-card-title{
+    // text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 0 6px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  & strong{
+    font-weight: 900;
+    color: var(--ion-color-white);
+  }
+  &:hover{
+    box-shadow: 0px 0px 20px 3px var(--light);
+    transform: scale(1.02);
+  }
+}
+
+// ! test
+//url("https://www.transparenttextures.com/patterns/dark-wood.png");
+//url("https://www.transparenttextures.com/patterns/brushed-alum.png")
+//url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png"); //!not bad
+
+.logo{
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  width: 25px;
+  opacity: .7;
+}
+
+.picture{
+    position: absolute;
+    top: 0;
+    right: -5px;
+    height: 220%;
+}
+
+.img-number{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    opacity: .7;
+    z-index: -1;
+}
+
+.countryBox{
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  left: 16px;
+  bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  & img{
+    object-fit: cover;
+  }
+}

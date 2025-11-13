@@ -8,9 +8,9 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule) },
-      { path: 'teams', loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule) },
-      { path: 'drivers', loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule) },
+      { path: 'home', loadChildren: () => import('../tabHome/tab1.module').then(m => m.Tab1PageModule) },
+      { path: 'teams', loadChildren: () => import('../tabTeams/tab2.module').then(m => m.Tab2PageModule) },
+      { path: 'drivers', loadChildren: () => import('../tabDrivers/tab3.module').then(m => m.Tab3PageModule) },
     ]
   },
 ];

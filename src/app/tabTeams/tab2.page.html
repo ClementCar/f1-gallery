@@ -1,10 +1,10 @@
 <ion-content class="page-content" [fullscreen]="true">
   <ion-row>
     @for (team of teams; track team.name) {
-      <ion-col size="4">
-        <ion-card [style.--base]="team.color" [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
+      <ion-col size="12" sizeSm="6" sizeLg="3">
+        <ion-card (click)="selectTeam()" [style.--base]="team.color" [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
           <ion-card-header>
-            <ion-card-title>{{ team.name }}</ion-card-title>
+            <ion-card-title class="exo-2-500">{{ team.name }}</ion-card-title>
           </ion-card-header>
           <img class="logo" [src]="'/assets/teams/' + getText(team.name) + '/bg-logo.png'" [alt]="team.name + ' logo'"> 
           <img class="car" [src]="'/assets/teams/' + getText(team.name) + '/car.avif'" [alt]="team.name + ' car'">

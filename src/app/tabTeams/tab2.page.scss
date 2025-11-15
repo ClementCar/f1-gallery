@@ -14,12 +14,17 @@ ion-card {
   --background: url("https://www.transparenttextures.com/patterns/lined-paper-2.png"), linear-gradient(-1deg, var(--base) 0%, var(--light) 30%, var(--dark) 92%);
 //   background-blend-mode: color-burn;
   transition: all .4s ease;
-  & strong{
+  & ion-card-header{
+    padding: 20px;
+  }
+  & ion-card-title{
     font-weight: 900;
     color: var(--ion-color-white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
   &:hover{
-    // box-shadow: 0px 10px 13px -7px var(--light);
+    box-shadow: 0px 0px 20px 3px var(--light);
+    transform: scale(1.02);
   }
 }
 
@@ -36,10 +41,11 @@ ion-card {
 
 .logo{
     position: absolute;
-    top: 50%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    height: 70%;
-    opacity: .7;
+    top: 25px;
+    right: 16px;
+    // height: 70%;
+    width: 35%;
+    max-width: 90px;
+    opacity: .5;
     z-index: -1;
 }

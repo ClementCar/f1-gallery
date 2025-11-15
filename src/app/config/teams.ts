@@ -1,7 +1,6 @@
 export const Teams: Team[] = [
   {
     name: "McLaren",
-    logo: "",
     color: "#863400",
     tp: { name: "Andrea", lastname: "Stella", age: 54, birthdate: new Date("1971-02-22"), image: "", nationality: { name: "Italy", image: "" } },
     drivers: [
@@ -11,7 +10,6 @@ export const Teams: Team[] = [
   },
   {
     name: "Ferrari",
-    logo: "",
     color: "#710006",
     tp: { name: "Fred", lastname: "Vasseur", age: 57, birthdate: new Date("1968-05-28"), image: "", nationality: { name: "France", image: "FRA" } },
     drivers: [
@@ -21,7 +19,6 @@ export const Teams: Team[] = [
   },
   {
     name: "Mercedes",
-    logo: "",
     color: "#007560",
     tp: { name: "Toto", lastname: "Wolff", age: 53, birthdate: new Date("1972-01-12"), image: "", nationality: { name: "Austria", image: "AUS" } },
     drivers: [
@@ -31,7 +28,6 @@ export const Teams: Team[] = [
   },
   {
     name: "Red Bull Racing",
-    logo: "",
     color: "#003282",
     tp: { name: "Laurent Mekies", lastname: "Horner", age: 51, birthdate: new Date("1973-11-16"), image: "", nationality: { name: "United Kingdom", image: "GBR" } },
     drivers: [
@@ -41,7 +37,6 @@ export const Teams: Team[] = [
   },
   {
     name: "Williams",
-    logo: "",
     color: "#000681",
     tp: { name: "James", lastname: "Vowles", age: 45, birthdate: new Date("1979-01-15"), image: "", nationality: { name: "United Kingdom", image: "GBR" } },
     drivers: [
@@ -51,17 +46,15 @@ export const Teams: Team[] = [
   },
   {
     name: "Racing Bulls",
-    logo: "",
     color: "#2345AB",
     tp: { name: "Alan", lastname: "Permane", age: 48, birthdate: new Date("1977-04-28"), image: "", nationality: { name: "France", image: "FRA" } },
     drivers: [
       { name: "Isack", lastname: "Hadjar", age: 19, number: 31, rank: 11, image: "", birthdate: new Date("2004-05-14"), nationality: { name: "France", image: "FRA" } },
-      { name: "Liam", lastname: "Lawson", age: 22, number: 30, rank: 15, image: "", birthdate: new Date("2002-02-11"), nationality: { name: "New Zealand", image: "" } },
+      { name: "Liam", lastname: "Lawson", age: 22, number: 30, rank: 15, image: "", birthdate: new Date("2002-02-11"), nationality: { name: "New Zealand", image: "NZL" } },
     ]
   },
   {
     name: "Aston Martin",
-    logo: "",
     color: "#00482C",
     tp: { name: "Andy", lastname: "Cowell", age: 50, birthdate: new Date("1974-06-28"), image: "", nationality: { name: "United Kingdom", image: "GBR" } },
     drivers: [
@@ -71,7 +64,6 @@ export const Teams: Team[] = [
   },
   {
     name: "Haas F1 Team",
-    logo: "",
     color: "#4D5052",
     tp: { name: "Ayao", lastname: "Komatsu", age: 51, birthdate: new Date("1974-10-21"), image: "", nationality: { name: "Japan", image: "JPN" } },
     drivers: [
@@ -81,7 +73,6 @@ export const Teams: Team[] = [
   },
   {
     name: "Kick Sauber",
-    logo: "",
     color: "#006300",
     tp: { name: "Jonathan", lastname: "Wheatley", age: 58, birthdate: new Date("1967-05-07"), image: "", nationality: { name: "United Kingdom", image: "GBR" } },
     drivers: [
@@ -91,7 +82,6 @@ export const Teams: Team[] = [
   },
   {
     name: "Alpine",
-    logo: "",
     color: "#005081",
     tp: { name: "Flavio", lastname: "Briatore", age: 39, birthdate: new Date("1986-04-10"), image: "", nationality: { name: "United Kingdom", image: "GBR" } },
     drivers: [
@@ -104,7 +94,6 @@ export const Teams: Team[] = [
 
 export interface Team {
     name: string,
-    logo: string,
     tp: TeamPrincipal,
     color: string,
     drivers: Driver[]

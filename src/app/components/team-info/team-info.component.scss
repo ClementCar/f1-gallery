@@ -1,0 +1,42 @@
+.wall{
+    height: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    background: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+}
+
+.stand{
+    width: 70%;
+    height: 70%;
+    &__bar, &__boxes{
+        background: var(--ion-color-light);
+    }
+    &__bar{
+        width: 100%;
+        height: 40px;
+        margin-bottom: 15px;
+    }
+    &__boxes{
+        width: 90%;
+        height: calc(100% - 40px);
+        margin: 0 auto;
+        padding: 10px;
+        padding-bottom: 0;
+        justify-content: space-between;
+        &__box{
+            width: 48%;
+            &__driver{
+                height: 20%;
+                width: 100%;
+                background: red;
+            }
+            &__garage{
+                height: 80%;
+                width: 100%;
+                background: black;
+            }
+        }
+    }
+}

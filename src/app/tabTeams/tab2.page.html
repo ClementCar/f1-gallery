@@ -2,7 +2,7 @@
   <ion-row>
     @for (team of teams; track team.name) {
       <ion-col size="12" sizeSm="6" sizeLg="3">
-        <ion-card (click)="selectTeam()" [style.--base]="team.color" [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
+        <ion-card (click)="selectTeam(team)" [style.--base]="team.color" [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
           <ion-card-header>
             <ion-card-title class="exo-2-500">{{ team.name }}</ion-card-title>
           </ion-card-header>

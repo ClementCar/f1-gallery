@@ -23,8 +23,8 @@ export class Tab2Page {
     return this.utilityService.getlightenDarkenColor(col, amt);
   }
 
-  selectTeam() {
-    this.route.navigate(['team-info'])
+  selectTeam(team: Team) {
+    this.route.navigate(['team-info', team.name])
   }
 
 }

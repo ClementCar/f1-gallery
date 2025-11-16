@@ -1,3 +1,23 @@
-<p>
-  team-info works!
-</p>
+<ion-content class="page-content" [fullscreen]="true">
+  <section class="wall">
+    <ion-title>{{ team.name }}</ion-title>
+    <div class="stand">
+      <div class="stand__bar"></div>
+      <div class="stand__boxes flex">
+        @for (driver of team.drivers; track driver.name) {
+          <div class="stand__boxes__box">
+            <div class="stand__boxes__box__driver">
+              <p>{{ driver.name }} {{ driver.lastname}}</p>
+            </div>
+            <div class="stand__boxes__box__garage">
+              
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+  <section class="info">
+
+  </section>
+</ion-content>

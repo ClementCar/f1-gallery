@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Team } from 'src/app/config/teams';
+import { TeamsService } from 'src/app/services/teams-service';
 
 @Component({
   selector: 'app-team-info',
@@ -8,8 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamInfoComponent  implements OnInit {
 
-  constructor() { }
+  name!: string;
+  team!: Team;
 
-  ngOnInit() {}
+  constructor(private route: ActivatedRoute, private teamService: TeamsService) { }
+
+  ngOnInit() {
+    this.name = this.route.snapshot.paramMap.get('name')!;
+    this.team = this.teamService.getTeam(this.name)!;
+  }
 
 }

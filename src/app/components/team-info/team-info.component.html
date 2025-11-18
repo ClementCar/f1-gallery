@@ -1,13 +1,13 @@
 <ion-content class="page-content" [fullscreen]="true">
   <section class="wall" [style.--base]="team.color" [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
-    <ion-title>{{ team.name }}</ion-title>
+    <ion-title>{{ team.name | uppercase}}</ion-title>
     <div class="stand">
       <div class="stand__bar"></div>
       <div class="stand__boxes flex">
         @for (driver of team.drivers; track driver.name) {
           <div class="stand__boxes__box">
             <div class="stand__boxes__box__driver flex ion-align-items-center">
-              <p>{{ driver.name }} {{ driver.lastname}}</p>
+              <p>{{ driver.name | uppercase }} {{ driver.lastname | uppercase }}</p>
               <img class="picture" [src]="'/assets/drivers/' + getText(driver.lastname) + '/picture.avif'" [alt]="driver.name + ' ' + driver.lastname">
             </div>
             <div class="stand__boxes__box__garage">

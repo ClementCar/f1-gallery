@@ -1,4 +1,12 @@
-section{
-    background: center / contain no-repeat
-                url("/assets/backgroundf1-2.png");
+// section{
+    // background: center / contain no-repeat
+    //             url("/assets/animation-f1.mp4");
+// }
+
+video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
 }

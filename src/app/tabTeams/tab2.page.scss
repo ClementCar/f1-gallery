@@ -49,3 +49,19 @@ ion-card {
     opacity: .5;
     z-index: -1;
 }
+
+// img {
+// 	box-sizing: border-box;
+// 	border: solid var(1) #0000;
+// 	width: 100%;
+// 	aspect-ratio: 1;
+// 	object-fit: cover;
+// 	border-radius: calc(2*var(4));
+// 	background: 
+// 		repeating-conic-gradient(from var(1, 0deg), 
+// 				var(2, #0000 0% 70%, #0000ff7f)) border-box;
+// 	filter: var(2, url(#glow-0));
+// 	animation: a 2s linear infinite
+// }
+
+// @keyframes a { to { 100%: 1turn } }

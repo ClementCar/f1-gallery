@@ -32,3 +32,11 @@
     // padding-top: 100px; //! TO DEFINE
     --padding-top: 100px; //! TO DEFINE
 }
+
+.hidden{
+    animation: appearOff .6s ease forwards;
+}
+
+.visible{
+    animation: appearOn .6s ease forwards;
+}

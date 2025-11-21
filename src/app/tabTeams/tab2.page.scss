@@ -1,8 +1,14 @@
+@use 'src/style/keyframes' as keyframes;
+
 ion-row{
     // width: 70%;
     margin: 0 auto;
     justify-content: center;
 
+}
+
+ion-col{
+  position: relative;
 }
 
 ion-card {
@@ -11,8 +17,8 @@ ion-card {
   height: 200px;
   border-radius: 16px;
   cursor: pointer;
+  opacity: 0;
   --background: url("https://www.transparenttextures.com/patterns/lined-paper-2.png"), linear-gradient(-1deg, var(--base) 0%, var(--light) 30%, var(--dark) 92%);
-//   background-blend-mode: color-burn;
   transition: all .4s ease;
   & ion-card-header{
     padding: 20px;
@@ -50,18 +56,45 @@ ion-card {
     z-index: -1;
 }
 
-// img {
-// 	box-sizing: border-box;
-// 	border: solid var(1) #0000;
-// 	width: 100%;
-// 	aspect-ratio: 1;
-// 	object-fit: cover;
-// 	border-radius: calc(2*var(4));
-// 	background: 
-// 		repeating-conic-gradient(from var(1, 0deg), 
-// 				var(2, #0000 0% 70%, #0000ff7f)) border-box;
-// 	filter: var(2, url(#glow-0));
-// 	animation: a 2s linear infinite
-// }
 
-// @keyframes a { to { 100%: 1turn } }
+.neon-anim {
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 0;
+  margin: 10px;
+}
+
+.neon-anim.start{
+  &::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: -50%;
+		top: -50%;
+		width: 175%;
+		height: 175%;
+		background-color: var(--ion-color-background);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-image: conic-gradient(transparent, var(--base), transparent 30%);
+		animation: rotate 2s linear;
+    animation-delay: var(--delay);
+	}
+	
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 2px;
+		top: 2px;
+		width: calc(100% - 4px);
+		height: calc(100% - 4px);
+		background: var(--ion-color-background);
+		border-radius: 20px;
+	}
+}

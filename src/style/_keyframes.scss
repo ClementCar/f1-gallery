@@ -1,0 +1,23 @@
+@keyframes appearOn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes appearOff{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    to{
+        transform: rotate(1turn);
+    }
+}

@@ -1,8 +1,14 @@
 <ion-content class="page-content" [fullscreen]="true">
   <ion-row>
-    @for (team of teams; track team.name) {
+    <!-- <div class="neon-anim" style="width: 200px; height: 150px;" [style.--base]="'#710006'"></div>
+    <ion-col size="6">
+       <div class="neon-anim" [style.--base]="'#710006'"></div>
+    </ion-col> -->
+    @for (team of teams; track team.name; let i = $index) {
       <ion-col size="12" sizeSm="6" sizeLg="3">
-        <ion-card class="team-card" (click)="selectTeam(team)" [style.--base]="team.color" 
+        <div class="neon-anim" [style.--base]="team.color" (animationend)="onNeonDone(team.name)" [class.hidden]="isNeonDone(team.name)" 
+              [style]="'animation-delay'" [style.--delay]=" i * 0.3 + 's'" [attr.data-team]="team.name"></div>
+        <ion-card class="team-card" (click)="selectTeam(team)" [style.--base]="team.color" [class.visible]="isNeonDone(team.name)"
                   [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
           <ion-card-header>
             <ion-card-title class="exo-2-500">{{ team.name }}</ion-card-title>

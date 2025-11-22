@@ -1,7 +1,6 @@
 @use 'src/style/keyframes' as keyframes;
 
 ion-row{
-    // width: 70%;
     margin: 0 auto;
     justify-content: center;
 
@@ -49,7 +48,6 @@ ion-card {
     position: absolute;
     top: 25px;
     right: 16px;
-    // height: 70%;
     width: 35%;
     max-width: 90px;
     opacity: .5;

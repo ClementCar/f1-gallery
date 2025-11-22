@@ -1,9 +1,5 @@
 <ion-content class="page-content" [fullscreen]="true">
   <ion-row>
-    <!-- <div class="neon-anim" style="width: 200px; height: 150px;" [style.--base]="'#710006'"></div>
-    <ion-col size="6">
-       <div class="neon-anim" [style.--base]="'#710006'"></div>
-    </ion-col> -->
     @for (team of teams; track team.name; let i = $index) {
       <ion-col size="12" sizeSm="6" sizeLg="3">
         <div class="neon-anim" [style.--base]="team.color" (animationend)="onNeonDone(team.name)" [class.hidden]="isNeonDone(team.name)" 

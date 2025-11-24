@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-tabs',
@@ -8,6 +8,13 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
+  showTabs = true;
+
   constructor() {}
+
+  onTabsChange(event: any){
+    const selected = event.tab;
+    this.showTabs = selected !== 'home';
+  }
 
 }

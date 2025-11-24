@@ -2,3 +2,16 @@
 img{
     width: 22px;
 }
+
+ion-tab-bar{
+    transition: all .4s ease;
+    
+    @starting-style{
+        transform: translateY(100%);
+    }
+}
+
+.hide{
+    transform: translateY(0);
+    transition: all .4s ease;
+}

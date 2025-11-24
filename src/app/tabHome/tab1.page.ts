@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-tab1',
@@ -6,8 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss'],
   standalone: false,
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit{
+
+  @ViewChild('bgVideo') video!: ElementRef<HTMLVideoElement>;
 
   constructor() {}
+
+  ngOnInit(): void {
+    console.log(this.video)
+    setTimeout(() => {
+      if(this.video){
+        const v = this.video.nativeElement as HTMLVideoElement;
+        console.log(this.video)
+
+        v.muted = true;
+        v.setAttribute('playsinline', '');
+        v.setAttribute('loop', '');
+        v.play();
+      }
+    },1000)
+  }
 
 }

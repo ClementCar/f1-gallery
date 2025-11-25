@@ -5,13 +5,9 @@ img{
 
 ion-tab-bar{
     transition: all .4s ease;
+    transform: translateY(0);
     
     @starting-style{
         transform: translateY(100%);
     }
-}
-
-.hide{
-    transform: translateY(0);
-    transition: all .4s ease;
 }

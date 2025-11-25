@@ -3,7 +3,7 @@
     @for (team of teams; track team.name; let i = $index) {
       <ion-col size="12" sizeSm="6" sizeLg="3">
         <div class="neon-anim" [style.--base]="team.color" (animationend)="onNeonDone(team.name)" [class.hidden]="isNeonDone(team.name)" 
-              [style]="'animation-delay'" [style.--delay]=" i * 0.3 + 's'" [attr.data-team]="team.name"></div>
+              [style]="'animation-delay'" [style.--delay]=" i * 0.2 + 's'" [attr.data-team]="team.name"></div>
         <ion-card class="team-card" (click)="selectTeam(team)" [style.--base]="team.color" [class.visible]="isNeonDone(team.name)"
                   [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
           <ion-card-header>

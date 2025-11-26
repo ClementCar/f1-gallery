@@ -3,19 +3,19 @@
   @if (showTabs) {
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="home" href="home">
-        <ion-label>Accueil</ion-label>
+        <ion-label>{{ 'HOME.HOME' | translate | uppercase }}</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="teams" href="teams">
         <!-- <ion-icon aria-hidden="true" name="ellipse"></ion-icon> -->
         <!-- <img src="/assets/formula-icon.png" alt="formula 1 icon"> -->
-        <ion-label>{{ 'HOME.TEAMS' | translate }}</ion-label>
+        <ion-label>{{ 'HOME.TEAMS' | translate | uppercase}}</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="drivers" href="drivers">
         <!-- <ion-icon aria-hidden="true" name="square"></ion-icon> -->
         <!-- <img src="/assets/driver-icon.png" alt="helmet icon"> -->
-        <ion-label>{{ 'HOME.DRIVERS' | translate }}</ion-label>
+        <ion-label>{{ 'HOME.DRIVERS' | translate | uppercase }}</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   }

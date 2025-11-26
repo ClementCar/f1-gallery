@@ -1,4 +1,7 @@
-<ion-card (click)="selectDriver()" [style.--base]="team.color" [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
+<div class="neon-anim" [style.--base]="team.color" (animationend)="onNeonDone(driver.name)" [class.hidden]="isNeonDone(driver.name)" 
+              [style]="'animation-delay'" [attr.data-driver]="driver.name"></div>
+<ion-card (click)="selectDriver()" [class.visible]="isNeonDone(driver.name)"
+          [style.--base]="team.color" [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
   <ion-card-header>
     <ion-card-title>
       {{ driver.name }} <br>

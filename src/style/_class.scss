@@ -39,9 +39,9 @@
     padding: 50px;
     opacity: 1;
     transition: all 1s ease 1.5s;
-    @starting-style{
-        opacity: 0;
-    }
+    // @starting-style{
+    //     opacity: 0;
+    // }
     & span {
         position: absolute;
         top: 50%;
@@ -50,9 +50,9 @@
         font-size: 115px;
         opacity: 0.4;
         transition: all 1s ease 1s;
-        @starting-style{
-            opacity: 0;
-        }
+        // @starting-style{
+        //     opacity: 0;
+        // }
     }
 }
 

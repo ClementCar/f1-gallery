@@ -6,6 +6,7 @@ import { Tab3Page } from './tab3.page';
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { DriverCardComponent } from '../components/driver-card/driver-card.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { DriverCardComponent } from '../components/driver-card/driver-card.compo
     CommonModule,
     FormsModule,
     Tab3PageRoutingModule,
+    TranslateModule
   ],
   declarations: [Tab3Page, DriverCardComponent]
 })

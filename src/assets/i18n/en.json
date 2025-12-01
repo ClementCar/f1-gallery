@@ -5,5 +5,9 @@
         "DRIVERS": "Drivers",
         "TEAMS": "Teams",
         "HOME": "Home"
+    },
+    "PAGE": {
+        "TITLE-TEAMS": "F1 Teams",
+        "TITLE-DRIVERS": "F1 Drivers"
     }
 }

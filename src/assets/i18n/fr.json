@@ -5,5 +5,10 @@
         "DRIVERS": "Pilotes",
         "TEAMS": "Écuries",
         "HOME": "Accueil"
+    },
+    "PAGE": {
+        "TITLE-TEAMS": "Écuries de F1",
+        "TITLE-DRIVERS": "Pilotes de F1"
     }
+    
 }

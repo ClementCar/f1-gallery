@@ -34,26 +34,46 @@
 // }
 
 .page-title{
-    font-size: 40px;
+    position: relative;
     text-align: center;
     padding: 50px;
-    opacity: 1;
-    transition: all 1s ease 1.5s;
-    // @starting-style{
-    //     opacity: 0;
-    // }
-    & span {
+    & h2 {
+      font-size: 40px;
+      opacity: 1;
+      transition: all 1.5s ease 2.5s;
+      @starting-style{
+          opacity: 0;
+      }
+    }
+    & svg {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 115px;
-        opacity: 0.4;
-        transition: all 1s ease 1s;
-        // @starting-style{
-        //     opacity: 0;
-        // }
+        stroke: #ffffff;
+        stroke-width: 0.7;
+        // fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 1;
+
+        stroke-dasharray: 10000;
+        stroke-dashoffset: 10000;
+
+        animation: write 2.5s ease forwards;
+        // filter: drop-shadow(0 0 4px rgba(255,255,255,.4));
     }
+}
+
+@keyframes write {
+  90%{
+    opacity: 1;
+  }
+  to{
+    stroke-dashoffset: 9500;
+    opacity: 0.4;
+
+  }
 }
 
 .hidden{

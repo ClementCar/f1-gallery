@@ -14,8 +14,9 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     FormsModule,
     Tab3PageRoutingModule,
-    TranslateModule
+    TranslateModule,
+    DriverCardComponent
   ],
-  declarations: [Tab3Page, DriverCardComponent]
+  declarations: [Tab3Page]
 })
 export class Tab3PageModule {}

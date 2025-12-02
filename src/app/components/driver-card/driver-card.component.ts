@@ -1,12 +1,16 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Driver, Team } from 'src/app/config/teams';
 import { UtilityService } from 'src/app/services/utility';
+import { IonCardTitle, IonCard } from "@ionic/angular/standalone";
+import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-driver-card',
   templateUrl: './driver-card.component.html',
   styleUrls: ['./driver-card.component.scss'],
-  standalone: false
+  imports: [CommonModule, IonicModule],
+  standalone: true
 })
 export class DriverCardComponent  implements OnInit, OnDestroy, AfterViewInit {
 

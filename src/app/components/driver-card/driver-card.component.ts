@@ -16,6 +16,7 @@ export class DriverCardComponent  implements OnInit, OnDestroy, AfterViewInit {
 
   @Input() team!: Team;
   @Input() driver!: Driver;
+  @Input() boxMode?: Boolean = false;
 
   @Output() select = new EventEmitter();
 

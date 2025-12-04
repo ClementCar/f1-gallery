@@ -1,6 +1,6 @@
 <div class="neon-anim" [style.--base]="team.color" (animationend)="onNeonDone(driver.name)" [class.hidden]="isNeonDone(driver.name)" 
               [style]="'animation-delay'" [attr.data-driver]="driver.name"></div>
-<ion-card (click)="selectDriver()" [class.visible]="isNeonDone(driver.name)"
+<ion-card (click)="selectDriver()" [class.visible]="isNeonDone(driver.name)" [class.boxmode]="boxMode"
           [style.--base]="team.color" [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
   <ion-card-header>
     <ion-card-title>
@@ -10,8 +10,10 @@
   </ion-card-header>
   <img class="logo" [src]="'/assets/teams/' + getText(team.name) + '/logo.avif'" [alt]="team.name + ' logo'">
   <img class="img-number" [src]="'/assets/drivers/' + getText(driver.lastname) + '/number.avif'" [alt]="driver.name + ' number'">
-  <img class="picture" [src]="'/assets/drivers/' + getText(driver.lastname) + '/picture.avif'" [alt]="driver.name + 'picture'">
-  <div class="countryBox">
-    <img class="w-100 h-100" [src]="'/assets/flags/' +  driver.nationality.image + '.png'" [alt]="driver.nationality.name">
-  </div>
+  <img class="picture" [src]="'/assets/drivers/' + getText(driver.lastname) + '/picture.avif'" [alt]="driver.name + 'picture'" [style.height]="boxMode ? '430%' : '220%'">
+  @if (!boxMode) {
+    <div class="countryBox">
+      <img class="w-100 h-100" [src]="'/assets/flags/' +  driver.nationality.image + '.png'" [alt]="driver.nationality.name">
+    </div>
+  }
 </ion-card>

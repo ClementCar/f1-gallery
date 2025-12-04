@@ -10,7 +10,7 @@
               <p>{{ driver.name | uppercase }} {{ driver.lastname | uppercase }}</p>
               <img class="picture" [src]="'/assets/drivers/' + getText(driver.lastname) + '/picture.avif'" [alt]="driver.name + ' ' + driver.lastname">
             </div> -->
-            <app-driver-card [driver]="driver" [team]="team"></app-driver-card>
+            <app-driver-card [driver]="driver" [team]="team" [boxMode]="true"></app-driver-card>
             <div class="stand__boxes__box__garage">
               <div class="ceiling-lines"></div>
               <div class="floor-light"></div>

@@ -1,7 +1,7 @@
 {
     "HOME": {
-        "TITLE": "Explore la vitesse",
-        "DESCRIPTION": "Explorez la vitesse",
+        "TITLE": "Explore le monde de la formule 1",
+        "DESCRIPTION": "Explore les écuries et les pilotes de la formule 1 saison 2025",
         "DRIVERS": "Pilotes",
         "TEAMS": "Écuries",
         "HOME": "Accueil"
@@ -9,6 +9,9 @@
     "PAGE": {
         "TITLE-TEAMS": "Écuries de F1",
         "TITLE-DRIVERS": "Pilotes de F1"
+    }, 
+    "INFO": {
+        "BACK": "Retour"
     }
     
 }

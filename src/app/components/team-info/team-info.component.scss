@@ -139,22 +139,3 @@ ion-title{
   opacity: 0.8;
   pointer-events: none;
 }
-
-/* Glow au sol (effet LED au fond du garage) */
-.stand__boxes__box__garage .floor-dencity {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 500%;
-  height:120px;
-  transform: translateX(-50%);
-  background: radial-gradient(
-    rgba(255,255,255,0.12) 0%,
-    rgba(255,255,255,0.05) 30%,
-    transparent 80%
-  );
-  filter: blur(30px);
-  opacity: 0.6;
-  pointer-events: none;
-}

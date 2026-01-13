@@ -6,7 +6,7 @@ import { TeamInfoComponent } from './components/team-info/team-info.component';
 const routes: Routes = [
   { path: '', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule) },
   { path: 'team-info/:name', component: TeamInfoComponent },
-  { path: 'driver-info', component: DriverInfoComponent },
+  { path: 'driver-info/:name', component: DriverInfoComponent },
   { path: '**', redirectTo: ''}
 ];
 @NgModule({

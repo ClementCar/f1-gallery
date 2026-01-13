@@ -44,8 +44,8 @@ export class DriverCardComponent  implements OnInit, OnDestroy, AfterViewInit {
     )
   }
 
-  selectDriver() {
-    this.select.emit();
+  selectDriver(driver: Driver) {
+    this.select.emit(driver);
   }
 
   getText(text: string){

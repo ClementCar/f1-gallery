@@ -2,7 +2,7 @@
   <div class="neon-anim" [style.--base]="team.color" (animationend)="onNeonDone(driver.name)" [class.hidden]="isNeonDone(driver.name)" 
               [style]="'animation-delay'" [attr.data-driver]="driver.name" [class.boxmode]="boxMode"></div>
 }
-<ion-card (click)="selectDriver()" [class.visible]="isNeonDone(driver.name) || boxMode" [class.boxmode]="boxMode"
+<ion-card (click)="selectDriver(driver)" [class.visible]="isNeonDone(driver.name) || boxMode" [class.boxmode]="boxMode"
           [style.--base]="team.color" [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
   <ion-card-header>
     <ion-card-title>

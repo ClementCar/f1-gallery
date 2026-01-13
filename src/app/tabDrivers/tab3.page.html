@@ -10,7 +10,7 @@
       @for (team of teams; track team.name) {
         @for (driver of team.drivers; track driver.name) {
           <ion-col size="12" sizeSm="6" sizeMd="4" sizeLg="3">
-            <app-driver-card [team]="team" [driver]="driver" (select)="selectDriver()"></app-driver-card>
+            <app-driver-card [team]="team" [driver]="driver" (select)="selectDriver($event)"></app-driver-card>
           </ion-col>
         }
       }

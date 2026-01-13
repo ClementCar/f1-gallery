@@ -21,8 +21,8 @@ export class Tab3Page implements OnInit {
     this.drivers = this.driverService.getOrderedDriver();
   }
 
-  selectDriver() {
-    this.route.navigate(['driver-info']);
+  selectDriver(driver: Driver) {
+    this.route.navigate(['driver-info', driver.lastname]);
   }
 
 }

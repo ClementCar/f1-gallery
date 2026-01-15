@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonContent } from "@ionic/angular/standalone";
 import { Driver, Team } from 'src/app/config/teams';
+import { TeamsService } from 'src/app/services/teams-service';
 import { UtilityService } from 'src/app/services/utility';
 
 @Component({
@@ -11,17 +12,16 @@ import { UtilityService } from 'src/app/services/utility';
   standalone: false
 })
 export class DriverInfoComponent  implements OnInit {
-  team!: Team;
-  driver!: Driver;
+  current!: { team: Team, driver: Driver} | null;
   name!: string;
 
-  constructor(private utilityService: UtilityService, private activatedRoute: ActivatedRoute) { }
+  constructor(private utilityService: UtilityService, private activatedRoute: ActivatedRoute,
+              private teamService: TeamsService
+  ) { }
 
   ngOnInit() {
-    // this.name = this.activatedRoute.snapshot.paramMap.get('name')!;
-    // console.log(this.name)
-    this.name = 'Norris';
-    this.driver = { name: "Oscar", lastname: "Piastri", age: 24, number: 81, rank: 2, image: "", birthdate: new Date("2001-04-06"), nationality: { name: "Australia", image: "AUS" } };
+    this.name = this.activatedRoute.snapshot.paramMap.get('name')!;
+    this.current = this.teamService.getDriverTeam(this.name);
 
   }
 

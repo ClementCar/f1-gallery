@@ -7,6 +7,10 @@
       <ion-button routerLink="/teams" >{{ 'HOME.TEAMS' | translate }}</ion-button>
       <ion-button routerLink="/drivers" >{{ 'HOME.DRIVERS' | translate }}</ion-button>
     </ion-buttons>
+    
+    <ion-button class="btn-sound" color="white" fill="clear" (click)="changeVolume()">
+      <ion-icon [name]="muted ? 'volume-mute-outline' : 'volume-high-outline' "></ion-icon>
+    </ion-button>
   </section>
 
 </ion-content>

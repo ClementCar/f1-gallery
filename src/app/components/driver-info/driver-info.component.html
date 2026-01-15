@@ -1,11 +1,22 @@
 <ion-content class="page-content" [fullscreen]="true">
-  <ion-row>
-    <ion-col size="6">
-
-    </ion-col>
-    <ion-col size="6">
-      <img [src]="'/assets/drivers/' + getLower(driver.lastname) + '/picture.avif'" alt="">
-    </ion-col>
-    dsfsgf
-  </ion-row>
+  @if (current) {
+    <ion-row class="h-100" [style.--base]="current.team.color">
+      <ion-col size="6" class="flex-column-center info">
+        <div class="box-lines" style="top: 0;">
+          <div class="lines"></div>
+          <div class="lines marg"></div>
+        </div>
+        <div class="box-lines" style="bottom: 0;">
+          <div class="lines"></div>
+          <div class="lines marg"></div>
+        </div>
+        <p class="windsong-regular">{{ current.driver.name }}</p>
+        <p>{{ current.driver.lastname }}</p>
+        <img [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
+      </ion-col>
+      <ion-col size="6">
+        <img [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/picture.avif'" alt="">
+      </ion-col>
+    </ion-row>
+  }
 </ion-content>

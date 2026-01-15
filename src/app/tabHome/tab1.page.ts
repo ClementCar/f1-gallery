@@ -10,6 +10,8 @@ export class Tab1Page implements OnInit{
 
   @ViewChild('bgVideo') video!: ElementRef<HTMLVideoElement>;
 
+  muted: boolean = true;
+
   constructor() {}
 
   ngOnInit(): void {
@@ -25,6 +27,12 @@ export class Tab1Page implements OnInit{
         v.play();
       }
     },1000)
+  }
+
+  changeVolume(){
+    const v = this.video.nativeElement as HTMLVideoElement;
+    this.muted = !this.muted;
+    v.muted = !v.muted;
   }
 
 }

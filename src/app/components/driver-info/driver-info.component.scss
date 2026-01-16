@@ -7,13 +7,31 @@ ion-row{
     }
 }
 
-.info{
-    font-size: 30px;
+.driver-title{
+    font-size: 35px;
+    & .name{
+        font-size: 50px;
+    }
+    & .surname{
+        font-weight: 700;
+        text-transform: uppercase;
+    }
     img{
-        width: 30%;
-        margin-top: 10px;
+        width: 150px;
+        margin-top: 30px;
     }
 }
+
+.col-img{
+    img{
+        height: 108%;
+        filter: drop-shadow(0 0 0.75rem var(--dark));
+    }
+}
+
+
+
+
 
 .box-lines{
     position: absolute;

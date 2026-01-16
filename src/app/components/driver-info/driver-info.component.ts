@@ -25,6 +25,10 @@ export class DriverInfoComponent  implements OnInit {
 
   }
 
+  lightenDarkenColor(color: string, amt: number){
+    return this.utilityService.getlightenDarkenColor(color, amt);
+  }
+
   getLower(name: string){
     return this.utilityService.getLowerText(name);
   }

@@ -1,7 +1,9 @@
 <ion-content class="page-content" [fullscreen]="true">
   @if (current) {
-    <ion-row class="h-100" [style.--base]="current.team.color">
-      <ion-col size="6" class="flex-column-center info">
+    <ion-row class="h-100" [style.--base]="current.team.color" [style.--light]="lightenDarkenColor(current.team.color, 40)" [style.--dark]="lightenDarkenColor(current.team.color, -40)">
+      <ion-col size="3"></ion-col>
+      <ion-col size="6" class="flex-column-center">
+
         <div class="box-lines" style="top: 0;">
           <div class="lines"></div>
           <div class="lines marg"></div>
@@ -10,11 +12,14 @@
           <div class="lines"></div>
           <div class="lines marg"></div>
         </div>
-        <p class="windsong-regular">{{ current.driver.name }}</p>
-        <p>{{ current.driver.lastname }}</p>
-        <img [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
+
+        <div class="driver-title flex-column-center">
+          <p class="name windsong-regular">{{ current.driver.name }}</p>
+          <p class="surname exo-2-500">{{ current.driver.lastname }}</p>
+          <img [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
+        </div>
       </ion-col>
-      <ion-col size="6">
+      <ion-col size="3" class="col-img">
         <img [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/picture.avif'" alt="">
       </ion-col>
     </ion-row>

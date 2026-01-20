@@ -7,6 +7,14 @@ ion-row{
     }
 }
 
+ion-card{
+    --background: rgba(var(--ion-color-dark-rgb), .5);
+}
+
+hr{
+    background: white;
+}
+
 .driver-title{
     font-size: 35px;
     & .name{

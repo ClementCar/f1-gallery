@@ -1,5 +1,6 @@
 ion-row{
-    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+    // background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+    background-image: url("https://www.transparenttextures.com/patterns/real-carbon-fibre.png");
     background-color: var(--base);
     overflow: hidden;
     & ion-col {
@@ -12,7 +13,7 @@ ion-card{
 }
 
 hr{
-    background: white;
+    background: var(--ion-color-white);
 }
 
 .driver-title{

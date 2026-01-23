@@ -1,12 +1,41 @@
 ion-row{
     // background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
     background-image: url("https://www.transparenttextures.com/patterns/real-carbon-fibre.png");
-    background-color: rgb(28, 28, 28); // rgb(43, 43, 43)
+    // background-color: rgb(28, 28, 28); // rgb(43, 43, 43)
+    background:
+    radial-gradient(
+      circle at top,
+      #2a2f35 0%,
+      #0b0f14 60%
+    ),
+    linear-gradient(
+      180deg,
+      #111 0%,
+      #000 100%
+    );
     overflow: hidden;
     & ion-col {
         height: 100%;
         padding: 20px;
     }
+}
+
+.background {
+  position: relative;
+  overflow: hidden;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 0, 60, 0.35) 50%,
+    transparent 70%
+  );
+  clip-path: polygon(40% 0, 70% 0, 30% 100%, 0 100%);
 }
 
 ion-card{
@@ -24,6 +53,7 @@ hr{
     }
     & .surname{
         font-weight: 700;
+        font-size: 35px;
         text-transform: uppercase;
     }
     img{
@@ -61,7 +91,9 @@ hr{
     }
 }
 
-
+ion-item{
+     --background: transparent;
+}
 
 
 

@@ -33,4 +33,8 @@ export class DriverInfoComponent  implements OnInit {
     return this.utilityService.getLowerText(name);
   }
 
+  function() {
+    // Injectable fonction animation
+  }
+
 }

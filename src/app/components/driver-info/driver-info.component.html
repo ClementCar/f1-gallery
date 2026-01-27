@@ -1,6 +1,8 @@
 <ion-content class="page-content" [fullscreen]="true">
+  <div class="w-100 h-100 bgContainer" #bgContainer></div>
   @if (current) {
-    <ion-row class="h-100" [style.--base]="current.team.color" [style.--light]="lightenDarkenColor(current.team.color, 40)" [style.--dark]="lightenDarkenColor(current.team.color, -40)">
+    <ion-row class="h-100" [style.--base]="current.team.color" [style.--light]="lightenDarkenColor(current.team.color, 40)" 
+            [style.--dark]="lightenDarkenColor(current.team.color, -40)">
       <ion-col size="5" class="flex-center col-img">
         <div class="col-img__driver">
           <!-- <img [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/picture.avif'" alt=""> -->
@@ -8,15 +10,6 @@
         <img class="col-img__number" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
       </ion-col>
       <ion-col size="3" class="flex-column ion-justify-content-evenly">
-
-        <!-- <div class="box-lines" style="top: 0;">
-          <div class="lines"></div>
-          <div class="lines marg"></div>
-        </div>
-        <div class="box-lines" style="bottom: 0;">
-          <div class="lines"></div>
-          <div class="lines marg"></div>
-        </div> -->
 
         <div class="driver-title">
           <h2 class="name windsong-regular">{{ current.driver.name }}</h2>
@@ -32,15 +25,6 @@
         </div>
       </ion-col>
       <ion-col size="4" class="flex ion-align-items-center">
-        <!-- <ion-card class="h-100 w-100">
-          <ion-card-content>
-            <p>test</p> <br>
-            <hr class="w-100"> <br>
-            <p>test</p> <br>
-            <hr class="w-100"> <br>
-            <p>test</p> <br>
-          </ion-card-content>
-        </ion-card> -->
         <ion-item-group class="w-100">
           <ion-item-divider>
             Stat

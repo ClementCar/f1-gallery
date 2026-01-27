@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonContent } from "@ionic/angular/standalone";
 import { Driver, Team } from 'src/app/config/teams';
@@ -13,11 +13,13 @@ import { UtilityService } from 'src/app/services/utility';
   standalone: false
 })
 export class DriverInfoComponent  implements OnInit , AfterViewInit{
+  @ViewChild('bgContainer') bgContainer!: ElementRef;
+
   current!: { team: Team, driver: Driver} | null;
   name!: string;
 
   constructor(private utilityService: UtilityService, private activatedRoute: ActivatedRoute,
-              private teamService: TeamsService, private el: ElementRef, private bg: AnimatedBackgroundService
+              private teamService: TeamsService, private el: ElementRef, private bgService: AnimatedBackgroundService
   ) { }
 
   ngOnInit() {
@@ -27,7 +29,16 @@ export class DriverInfoComponent  implements OnInit , AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    this.bg.create(this.el.nativeElement, {number: this.current?.driver.number + ''})
+    console.log(this.bgContainer)
+    setTimeout(() => {
+    if (this.bgContainer) {
+      this.bgService.create(this.bgContainer.nativeElement, {
+        number: this.current?.driver.number + '' || '37',
+        primaryColor: this.current?.team.color || '#3cf2ff'
+      });
+      console.log("in")
+    }
+  }, 1000);
   }
 
   lightenDarkenColor(color: string, amt: number){

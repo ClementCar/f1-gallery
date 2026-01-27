@@ -12,7 +12,7 @@ export class AnimatedBackgroundService {
   if (!host) return;
   const { number = '37', primaryColor = '#3cf2ff' } = options || {};
 
-  host.innerHTML = ''; // Ici tu peux nettoyer car le container est dédié au fond
+  host.innerHTML = '';
 
   const container = this.renderer.createElement('div');
   this.apply(container, {
@@ -23,7 +23,7 @@ export class AnimatedBackgroundService {
     overflow: 'hidden'
   });
 
-  // --- COUCHE 1 : MOTIF DE NUMÉROS RÉPÉTÉS (Le "décuplé") ---
+  // --- COUCHE 1 : MOTIF DE NUMÉROS RÉPÉTÉS
   const pattern = this.renderer.createElement('div');
   this.apply(pattern, {
     position: 'absolute',
@@ -48,7 +48,7 @@ export class AnimatedBackgroundService {
     this.renderer.appendChild(pattern, n);
   }
 
-  // --- COUCHE 2 : LE GRAND NUMÉRO FOCUS ---
+  // --- COUCHE 2 : LE GRAND NUMÉRO FOCUS
   const mainNumber = this.renderer.createElement('div');
   mainNumber.innerText = number;
   this.apply(mainNumber, {
@@ -62,12 +62,60 @@ export class AnimatedBackgroundService {
     lineHeight: '0.8',
     pointerEvents: 'none'
   });
+
   // Effet néon subtil sur le grand numéro
   this.renderer.setStyle(mainNumber, '-webkit-text-stroke', `2px ${primaryColor}`);
 
   this.renderer.appendChild(container, pattern);
   this.renderer.appendChild(container, mainNumber);
   this.renderer.appendChild(host, container);
+
+    // On passe la couleur de la team au CSS pour l'animation
+  host.style.setProperty('--neon-color', primaryColor);
+
+
+  // --- COUCHE 3 : RECTANGLE NÉON SVG ---
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = this.renderer.createElement('svg', svgNS);
+  this.renderer.addClass(svg, 'neon-svg');
+
+  this.apply(svg, {
+    position: 'absolute',
+    left: '30%',
+    top: '20%',
+    width: '30%',
+    height: '60%',
+    transform: 'skewX(-15deg)',
+    zIndex: '2'
+  });
+
+  // Le tracé du rectangle (on utilise rect pour la précision)
+  const rect = this.renderer.createElement('rect', svgNS);
+  this.renderer.setAttribute(rect, 'x', '2');
+  this.renderer.setAttribute(rect, 'y', '2');
+  this.renderer.setAttribute(rect, 'width', '98%');
+  this.renderer.setAttribute(rect, 'height', '98%');
+  this.renderer.setAttribute(rect, 'rx', '4'); 
+
+  // Style du néon qui circule
+  this.renderer.addClass(rect, 'neon-path-glow');
+  this.apply(rect, {
+    stroke: primaryColor,
+    filter: `drop-shadow(0 0 8px ${primaryColor})`
+  });
+
+  // On ajoute un fond au rectangle pour le relief
+  const bgRect = rect.cloneNode() as HTMLElement;
+  this.renderer.removeClass(bgRect, 'neon-path-glow');
+  this.apply(bgRect, {
+    fill: `${primaryColor}11`,
+    stroke: `${primaryColor}33`,
+    strokeWidth: '1'
+  });
+
+  this.renderer.appendChild(svg, bgRect);
+  this.renderer.appendChild(svg, rect);
+  this.renderer.appendChild(host, svg);
 }
 
   private apply(el: HTMLElement, styles: any) {

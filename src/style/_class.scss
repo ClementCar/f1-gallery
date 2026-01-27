@@ -88,6 +88,20 @@
     animation: appearOn .6s ease forwards;
 }
 
+.neon-svg {
+  overflow: visible;
+  pointer-events: none;
+}
+
+.neon-path-glow {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  /* La magie est ici : on crée un segment lumineux */
+  stroke-dasharray: 100 2000; 
+  // stroke-dashoffset: 500;
+  animation: stroke-flow 5s infinite linear;
+}
 
 
 // ==========================================

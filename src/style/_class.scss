@@ -97,10 +97,35 @@
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
-  /* La magie est ici : on crée un segment lumineux */
   stroke-dasharray: 100 2000; 
   // stroke-dashoffset: 500;
   animation: stroke-flow 5s infinite linear;
+}
+
+
+//  * MICRO NEON
+.micro-neon {
+  fill: none;
+  stroke-linecap: round;
+  opacity: 0.3;
+  /* Point très court : 20px de trait, 300px de vide */
+  stroke-dasharray: 20 300; 
+  animation: micro-flow 5s infinite linear;
+}
+
+/* Version plus rapide pour simuler des transferts de données */
+.micro-neon-fast {
+  animation-duration: 2s;
+  opacity: 0.5;
+  stroke-dasharray: 40 400;
+}
+
+.micro-neon-vertical {
+  fill: none;
+  stroke-linecap: round;
+  opacity: 0.3;
+  stroke-dasharray: 20 300; 
+  animation: micro-flow-y 6s infinite linear; /* Un peu plus lent verticalement */
 }
 
 

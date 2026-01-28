@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { TransitionService } from './services/transition-service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
   standalone: false,
 })
 export class AppComponent {
-  constructor(private translateService: TranslateService) {
+
+  transitionVisible = computed(() => this.transition.visible());
+
+  constructor(private translateService: TranslateService, public transition: TransitionService) {
     this.translateService.addLangs(['en', 'fr']);
     this.translateService.setFallbackLang('fr');
 

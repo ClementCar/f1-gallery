@@ -1,10 +1,9 @@
 <ion-app>
-  <!-- <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-title>
-        F1 Gallery
-      </ion-title>
-    </ion-toolbar>
-  </ion-header> -->
   <ion-router-outlet></ion-router-outlet>
+
+  @if (transitionVisible()) {
+    <div class="transition-overlay">
+      <ion-spinner></ion-spinner>
+    </div>
+  }
 </ion-app>

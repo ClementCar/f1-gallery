@@ -29,16 +29,14 @@ export class DriverInfoComponent  implements OnInit , AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    console.log(this.bgContainer)
     setTimeout(() => {
     if (this.bgContainer) {
       this.bgService.create(this.bgContainer.nativeElement, {
         number: this.current?.driver.number + '' || '37',
         primaryColor: this.current?.team.color || '#3cf2ff'
       });
-      console.log("in")
     }
-  }, 1000);
+  }, 500);
   }
 
   lightenDarkenColor(color: string, amt: number){

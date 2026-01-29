@@ -15,6 +15,8 @@ import { CustomHttpLoader } from './translate/custom-http-loader';
 import { DriverInfoComponent } from './components/driver-info/driver-info.component';
 import { TeamInfoComponent } from './components/team-info/team-info.component';
 import { DriverCardComponent } from './components/driver-card/driver-card.component';
+import { LottieComponent, provideLottieOptions } from 'ngx-lottie';
+import player from 'lottie-web';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -34,11 +36,15 @@ export function HttpLoaderFactory(http: HttpClient) {
         useClass: CustomHttpLoader
       }
     }),
-    DriverCardComponent
+    DriverCardComponent,
+    LottieComponent
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideHttpClient(withFetch()),
+    provideLottieOptions({
+      player: () => player
+    })
   ],
   bootstrap: [AppComponent],
 })

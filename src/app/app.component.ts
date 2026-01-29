@@ -1,6 +1,8 @@
 import { Component, computed } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { TransitionService } from './services/transition-service';
+import { LottieComponent } from 'ngx-lottie';
+import { AnimationItem } from 'lottie-web';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,16 @@ import { TransitionService } from './services/transition-service';
 })
 export class AppComponent {
 
+  options = {
+    path: '/assets/lotties/f1-track.json',
+    loop: true,
+    autoplay: true
+  }
+
+  private anim?: AnimationItem;
+
   transitionVisible = computed(() => this.transition.visible());
+  isLeaving = computed(() => this.transition.leaving());
 
   constructor(private translateService: TranslateService, public transition: TransitionService) {
     this.translateService.addLangs(['en', 'fr']);
@@ -18,5 +29,10 @@ export class AppComponent {
 
     const browserLang = this.translateService.getBrowserLang();
     this.translateService.use(browserLang?.match(/en|fr/) ? browserLang : 'fr');
+  }
+
+  animationCreated(animation: AnimationItem){
+    this.anim = animation;
+    this.anim.setSpeed(3);
   }
 }

@@ -14,13 +14,13 @@ import { UtilityService } from 'src/app/services/utility';
 })
 export class DriverInfoComponent  implements OnInit , AfterViewInit{
   @ViewChild('bgContainer') bgContainer!: ElementRef;
-
+  
   current!: { team: Team, driver: Driver} | null;
   name!: string;
 
   constructor(private utilityService: UtilityService, private activatedRoute: ActivatedRoute,
               private teamService: TeamsService, private el: ElementRef, private bgService: AnimatedBackgroundService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.name = this.activatedRoute.snapshot.paramMap.get('name')!;

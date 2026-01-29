@@ -2,8 +2,8 @@
   <ion-router-outlet></ion-router-outlet>
 
   @if (transitionVisible()) {
-    <div class="transition-overlay">
-      <ion-spinner></ion-spinner>
+    <div class="transition-overlay" [class.leaving]="isLeaving()">
+      <ng-lottie [options]="options" width="200px" (animationCreated)="animationCreated($event)"></ng-lottie>
     </div>
   }
 </ion-app>

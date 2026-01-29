@@ -60,14 +60,56 @@ export class AnimatedBackgroundService {
       filter: `drop-shadow(0 0 8px ${primaryColor})`,
     });
 
-    // On ajoute un fond au rectangle pour le relief
+    //*TODO à désactiver pour gerre le fond  // On ajoute un fond au rectangle pour le relief
     const bgRect = rect.cloneNode() as HTMLElement;
     this.renderer.removeClass(bgRect, 'neon-path-glow');
     this.apply(bgRect, {
       fill: `${primaryColor}11`,
       stroke: `${primaryColor}33`,
       strokeWidth: '1',
+      stopOpacity: '0.5'
     });
+
+
+    // *TODO A activer pour gerer le fond  --- fond dégradé (centre transparent, bords plus denses)
+    // const svgEl = svg as SVGElement;
+    // let defs = svgEl.querySelector('defs');
+    // if (!defs) {
+    //   defs = this.renderer.createElement('defs', svgNS);
+    //   this.renderer.appendChild(svgEl, defs);
+    // }
+
+    // const gradId = `bg-grad-${Math.random().toString(36).slice(2, 7)}`;
+    // const grad = this.renderer.createElement('radialGradient', svgNS);
+    // this.renderer.setAttribute(grad, 'id', gradId);
+    // this.renderer.setAttribute(grad, 'gradientUnits', 'userSpaceOnUse');
+    // this.renderer.setAttribute(grad, 'cx', '50%');
+    // this.renderer.setAttribute(grad, 'cy', '50%');
+    // this.renderer.setAttribute(grad, 'r', '70%');
+
+    // [
+    //   ['0%', '0'],
+    //   ['55%', '0.15'],
+    //   ['100%', '0.45'],
+    // ].forEach(([offset, opacity]) => {
+    //   const stop = this.renderer.createElement('stop', svgNS);
+    //   this.renderer.setAttribute(stop, 'offset', offset);
+    //   this.renderer.setAttribute(stop, 'stop-color', primaryColor);
+    //   this.renderer.setAttribute(stop, 'stop-opacity', opacity);
+    //   this.renderer.appendChild(grad, stop);
+    // });
+
+    // this.renderer.appendChild(defs, grad);
+
+    // // Rectangle de fond
+    // const bgRect = rect.cloneNode() as HTMLElement;
+    // this.renderer.removeClass(bgRect, 'neon-path-glow');
+    // this.apply(bgRect, {
+    //   fill: `url(#${gradId})`,
+    //   stroke: `${primaryColor}33`,
+    //   strokeWidth: '1',
+    // });
+
 
     this.renderer.appendChild(svg, bgRect);
     this.renderer.appendChild(svg, rect);
@@ -87,7 +129,7 @@ export class AnimatedBackgroundService {
     for (let i = 0; i < 15; i++) {
       const isVertical = Math.random() > 0.7; // 30% de chances d'être vertical
       const width = isVertical ? 40 : Math.random() * 120 + 40;
-      const height = isVertical ? Math.random() * 120 + 40 : 40;
+      const height = isVertical ? Math.random() * 120 + 40 : 40; 
       
       const microSvg = this.renderer.createElement('svg', svgNS);
       this.apply(microSvg, {

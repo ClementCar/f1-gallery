@@ -3,25 +3,31 @@
   @if (current) {
     <ion-row class="h-100" [style.--base]="current.team.color" [style.--light]="lightenDarkenColor(current.team.color, 40)" 
             [style.--dark]="lightenDarkenColor(current.team.color, -40)">
-      <ion-col size="4" class="flex-column ion-justify-content-center">
-        <div class="driver-title">
-          <h2 class="name windsong-regular">{{ current.driver.name }}</h2>
-          <h2 class="surname audiowide-regular">{{ current.driver.lastname }}</h2>
+      <ion-col size="8" class="flex">
+
+        <div class="flex-column ion-justify-content-center">
+          <div class="driver-title">
+            <h2 class="name windsong-regular">{{ current.driver.name }}</h2>
+            <h2 class="surname audiowide-regular">{{ current.driver.lastname }}</h2>
+          </div>
+
+          <p class="ion-margin-top">{{current.team.name}}</p>
+
+          <div class="ion-margin-top driver-bio">
+            <p>BIO</p>
+            <p>testestesteststeestsetestte</p>
+          </div>
         </div>
 
-        <p class="ion-margin-top">{{current.team.name}}</p>
-
-        <div class="ion-margin-top driver-bio">
-          <p>BIO</p>
-          <p>testestesteststeestsetestte</p>
-        </div>
-      </ion-col>
-      <ion-col size="4" class="col-img">
-        <!-- <div class="col-img__driver">
+        <div class="col-img">
           <img [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/picture.avif'" alt="">
-        </div> -->
-        <img [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/picture.avif'" alt="">
+        </div>
       </ion-col>
+
+      <!-- <ion-col size="4" class="col-img">
+        
+      </ion-col> -->
+
       <ion-col size="4" class="flex-column ion-justify-content-end">
         <img class="number" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
         <ion-item-group class="w-100">

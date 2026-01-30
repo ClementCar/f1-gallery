@@ -105,27 +105,37 @@
 
 //  * MICRO NEON
 .micro-neon {
-  fill: none;
   stroke-linecap: round;
-  opacity: 0.3;
-  /* Point très court : 20px de trait, 300px de vide */
-  stroke-dasharray: 20 300; 
-  animation: micro-flow 5s infinite linear;
+  opacity: 0.35;
+  stroke-dasharray: 120 600;
+  animation: micro-flow 6s infinite linear;
 }
 
-/* Version plus rapide pour simuler des transferts de données */
 .micro-neon-fast {
-  animation-duration: 2s;
+  stroke-dasharray: 200 800;
+  animation-duration: 3s;
   opacity: 0.5;
-  stroke-dasharray: 40 400;
 }
 
 .micro-neon-vertical {
-  fill: none;
   stroke-linecap: round;
   opacity: 0.3;
-  stroke-dasharray: 20 300; 
-  animation: micro-flow-y 6s infinite linear; /* Un peu plus lent verticalement */
+  stroke-dasharray: 120 700;
+  animation: micro-flow-y 7s infinite linear;
+}
+
+.bg-line {
+  opacity: 0.25;
+  animation: drift-x 12s linear infinite;
+}
+
+.bg-line.fast {
+  animation-duration: 6s;
+  opacity: 0.4;
+}
+
+.bg-line.vertical {
+  animation-name: drift-y;
 }
 
 

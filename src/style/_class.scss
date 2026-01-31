@@ -102,41 +102,31 @@
   animation: stroke-flow 5s infinite linear;
 }
 
-
-//  * MICRO NEON
-.micro-neon {
-  stroke-linecap: round;
-  opacity: 0.35;
-  stroke-dasharray: 120 600;
-  animation: micro-flow 6s infinite linear;
-}
-
-.micro-neon-fast {
-  stroke-dasharray: 200 800;
-  animation-duration: 3s;
-  opacity: 0.5;
-}
-
-.micro-neon-vertical {
-  stroke-linecap: round;
-  opacity: 0.3;
-  stroke-dasharray: 120 700;
-  animation: micro-flow-y 7s infinite linear;
-}
-
 .bg-line {
   opacity: 0.25;
-  animation: drift-x 12s linear infinite;
+  animation: drift-x 18s linear infinite alternate;
 }
 
-.bg-line.fast {
-  animation-duration: 6s;
-  opacity: 0.4;
+.bg-line-vertical {
+  opacity: 0.2;
+  animation: drift-y 22s linear infinite alternate;
 }
 
-.bg-line.vertical {
-  animation-name: drift-y;
+.bg-line-fixed {
+  animation: slowGlow 6s ease-in-out infinite;
 }
+
+/* points lumineux */
+.bg-dot {
+  animation: slowGlow 3s ease-in-out infinite;
+}
+
+// .bg-line .bg-line-fixed .bg-line-vertical .bg-dot{
+//   transition: opacity 1.5s ease;
+//   @starting-style{
+//     opacity: 0;
+//   }
+// }
 
 
 // ==========================================

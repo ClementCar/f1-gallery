@@ -34,7 +34,9 @@ export class TransitionService {
     await this.sleep(delay);
 
     await this.router.navigate(commands);
-
+    
+    await this.sleep(200);
+    
     this.leaving.set(true);
 
     await this.sleep(400); // durée CSS

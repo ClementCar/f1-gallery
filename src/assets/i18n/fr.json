@@ -12,6 +12,28 @@
     }, 
     "INFO": {
         "BACK": "Retour"
+    },
+    "BIO": {
+        "NORRIS": "Lando Norris, né le 13 novembre 1999 au Royaume-Uni, est le champion du monde en titre et pilote pour McLaren, reconnu pour sa vitesse et sa régularité en Formule 1.",
+        "PIASTRI": "Oscar Piastri, né le 6 avril 2001 en Australie, est un pilote australien de McLaren, réputé pour son passage rapide dans les catégories juniors et son potentiel dans la catégorie reine.",
+        "VERSTAPPEN": "Max Verstappen, né le 30 septembre 1997 aux Pays-Bas, est un multiple champion du monde de Formule 1 et pilote de Red Bull Racing, célèbre pour son agressivité et ses nombreuses victoires.",
+        "HADJAR": "Isack Hadjar, né le 28 septembre 2004 en France, est un jeune pilote français promu chez Red Bull Racing, salué pour ses performances prometteuses et sa combativité.",
+        "RUSSELL": "George Russell, né le 15 février 1998 au Royaume-Uni, est un pilote britannique de Mercedes, apprécié pour sa constance et sa solidité dans toutes les conditions de course.",
+        "ANTONELLI": "Andrea Kimi Antonelli, né le 25 août 2006 en Italie, est un jeune prodige de Mercedes ayant fait une entrée remarquée en Formule 1 à un très jeune âge.",
+        "LECLERC": "Charles Leclerc, né le 16 octobre 1997 à Monaco, est un pilote monégasque de Ferrari, connu pour sa vitesse pure et ses performances impressionnantes.",
+        "HAMILTON": "Lewis Hamilton, né le 7 janvier 1985 au Royaume-Uni, est un septuple champion du monde de Formule 1 courant pour Ferrari avec une carrière historique.",
+        "ALBON": "Alexander Albon, né le 23 mars 1996 en Thaïlande, est un pilote thaïlandais de Williams, reconnu pour sa détermination et sa constance.",
+        "SAINZ": "Carlos Sainz, né le 1er septembre 1994 en Espagne, est un pilote espagnol de Williams, réputé pour sa régularité et sa capacité à scorer des points.",
+        "LAWSON": "Liam Lawson, né le 11 février 2002 en Nouvelle-Zélande, est un pilote de Racing Bulls, revenant en 2026 après avoir montré son potentiel depuis ses débuts en F1.", 
+        "LINDBLAD": "Arvid Lindblad, né le 8 août 2007 au Royaume-Uni, est un jeune pilote britannique faisant ses débuts en Formule 1 chez Racing Bulls.",
+        "ALONSO": "Fernando Alonso, né le 29 juillet 1981 en Espagne, est un pilote vétéran d’Aston Martin, double champion du monde, avec une carrière riche et expérimentée.",
+        "STROLL": "Lance Stroll, né le 29 octobre 1998 au Canada, est un pilote canadien d’Aston Martin, apprécié pour sa constance et sa capacité à tirer le meilleur de sa monoplace.",
+        "OCON": "Esteban Ocon, né le 17 septembre 1996 en France, est un pilote français de Haas, expérimenté et capable de marquer régulièrement des points.",
+        "BEARMAN": "Oliver Bearman, né le 8 mai 2005 au Royaume-Uni, est un jeune pilote britannique de Haas, connu pour son agressivité et son potentiel de carrière.",
+        "HULKENBERG": "Nico Hülkenberg, né le 19 août 1987 en Allemagne, est un pilote allemand d’Audi, reconnu pour sa constance et sa maîtrise technique.",
+        "BORTOLETO": "Gabriel Bortoleto, né le 14 octobre 2004 au Brésil, est un jeune pilote brésilien d’Audi, poursuivant sa progression après une brillante carrière junior.",
+        "GASLY": "Pierre Gasly, né le 7 février 1996 en France, est un pilote français de Formule 1 engagé avec Alpine pour la saison 2026. Il a débuté en F1 en 2017 avec Toro Rosso avant de rejoindre Red Bull, puis de revenir à une écurie sœur avant de s’installer chez Alpine, où il est reconnu pour son intelligence de course et sa ténacité."
+
     }
     
 }

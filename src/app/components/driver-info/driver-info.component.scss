@@ -64,21 +64,31 @@ hr{
     position: relative;
     & img{
         height: 130%;
-        transform: translateX(-35px);
+        transform: translateX(10);
         margin-top: 90px;
         opacity: 1;
         filter: drop-shadow(0 0 0.75rem rgba(var(--light), 0.5));
         transition: all .5s ease;
         @starting-style{
-            transform: translateX(5px);
+            transform: translateX(45px);
             opacity: 0;
         }
         }
 }
 
+.driver-bio{
+    font-size: 16px;
+    color: var(--ion-color-white-shade);
+    & .bio{
+        font-family: "Exo 2", sans-serif;
+    }
+}
+
 .number{
-    max-height: 30%;
+    // max-height: 30%;
+    width: 100px;
     z-index: 0;
+    margin: 0 auto;
     opacity: 0.6;
 }
 

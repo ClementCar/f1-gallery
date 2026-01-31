@@ -5,17 +5,17 @@
             [style.--dark]="lightenDarkenColor(current.team.color, -40)">
       <ion-col size="8" class="flex">
 
-        <div class="flex-column ion-justify-content-center">
+        <div class="flex-column ion-justify-content-center" style="width: 300px;">
           <div class="driver-title">
             <h2 class="name windsong-regular">{{ current.driver.name }}</h2>
             <h2 class="surname audiowide-regular">{{ current.driver.lastname }}</h2>
           </div>
 
-          <p class="ion-margin-top">{{current.team.name}}</p>
 
           <div class="ion-margin-top driver-bio">
-            <p>BIO</p>
-            <p>testestesteststeestsetestte</p>
+            <!-- <p>BIO</p> -->
+            <p class="ion-margin-top">{{current.team.name}}</p>
+            <p class="ion-margin-top bio">{{current.driver.bio | translate}}</p>
           </div>
         </div>
 

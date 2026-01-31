@@ -44,11 +44,23 @@
 }
 
 @keyframes drift-x {
-  from { transform: translateX(-30%); }
-  to   { transform: translateX(30%); }
+  from { transform: translateX(-8%); }
+  to   { transform: translateX(8%); }
 }
 
 @keyframes drift-y {
-  from { transform: translateY(-30%); }
-  to   { transform: translateY(30%); }
+  from { transform: translateY(-8%); }
+  to   { transform: translateY(8%); }
+}
+
+@keyframes slowGlow {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+@keyframes slowDrift {
+  0% { transform: skewX(-15deg) translateX(0px); }
+  50% { transform: skewX(-15deg) translateX(6px); }
+  100% { transform: skewX(-15deg) translateX(0px); }
 }

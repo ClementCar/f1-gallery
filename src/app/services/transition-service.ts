@@ -11,20 +11,20 @@ export class TransitionService {
   manualNavigation: boolean = false;
 
   constructor(private router: Router) {
-  //   this.router.events
-  //     .pipe(filter((e) => e instanceof NavigationStart))
-  //     .subscribe(() => {
-  //       if (!this.manualNavigation) {
-  //         this.visible.set(true);
-  //       }
-  //     });
+    this.router.events
+      .pipe(filter((e) => e instanceof NavigationStart))
+      .subscribe(() => {
+        if (!this.manualNavigation) {
+          this.visible.set(true);
+        }
+      });
 
-  //   this.router.events
-  //     .pipe(filter(e => e instanceof NavigationEnd))
-  //     .subscribe(() => {
-  //       this.visible.set(false);
-  //       this.manualNavigation = false;
-  //     })
+    this.router.events
+      .pipe(filter(e => e instanceof NavigationEnd))
+      .subscribe(() => {
+        this.visible.set(false);
+        this.manualNavigation = false;
+      })
   }
 
   async navigate(commands: any[], delay = 600) {

@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Team, Teams } from '../config/teams';
 import { UtilityService } from '../services/utility';
 import { Router } from '@angular/router';
+import { TransitionService } from '../services/transition-service';
 
 @Component({
   selector: 'app-tab2',
@@ -16,7 +17,9 @@ export class Tab2Page implements OnInit, OnDestroy, AfterViewInit {
   seen: Record<string, boolean> = {};
   observer!: IntersectionObserver;
 
-  constructor(private utilityService: UtilityService, private route: Router) {}
+  constructor(private utilityService: UtilityService, private route: Router,
+              private transitionService: TransitionService
+  ) {}
 
   ngOnInit(): void {
     this.observer = new IntersectionObserver(
@@ -51,7 +54,7 @@ export class Tab2Page implements OnInit, OnDestroy, AfterViewInit {
   }
 
   selectTeam(team: Team) {
-    this.route.navigate(['team-info', team.name])
+    this.transitionService.navigate(['team-info', team.name]);
   }
 
   onNeonDone(name: string){

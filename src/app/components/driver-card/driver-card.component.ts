@@ -18,7 +18,7 @@ export class DriverCardComponent  implements OnInit, OnDestroy, AfterViewInit {
   @Input() driver!: Driver;
   @Input() boxMode?: Boolean = false;
 
-  @Output() select = new EventEmitter();
+  @Output() select = new EventEmitter<Driver>();
 
   neonFinished: Record<string, boolean> = {};
   seen: Record<string, boolean> = {};

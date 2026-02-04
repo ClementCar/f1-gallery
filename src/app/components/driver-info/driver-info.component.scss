@@ -66,6 +66,7 @@ hr{
         height: 130%;
         transform: translateX(10);
         margin-top: 90px;
+        object-fit: cover;
         opacity: 1;
         filter: drop-shadow(0 0 0.75rem rgba(var(--light), 0.5));
         transition: all .5s ease;

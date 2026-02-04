@@ -7,7 +7,7 @@
         @for (driver of team.drivers; track driver.name) {
           <div class="stand__boxes__box">
 
-            <app-driver-card [driver]="driver" [team]="team" [boxMode]="true"></app-driver-card>
+            <app-driver-card [driver]="driver" [team]="team" [boxMode]="true" (select)="selectDriver($event)"></app-driver-card>
 
             <div class="stand__boxes__box__garage">
               <div class="ceiling-lines"></div>

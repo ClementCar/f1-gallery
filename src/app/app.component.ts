@@ -13,7 +13,7 @@ import { AnimationItem } from 'lottie-web';
 export class AppComponent {
 
   options = {
-    path: '/assets/lotties/f1-track.json',
+    path: '/assets/lotties/Facebook.json',
     loop: true,
     autoplay: true
   }

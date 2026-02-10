@@ -1,9 +1,11 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { Driver, Team } from 'src/app/config/teams';
+import { Team } from 'src/app/config/teams';
 import { UtilityService } from 'src/app/services/utility';
 import { IonCardTitle, IonCard } from "@ionic/angular/standalone";
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { Driver } from 'src/app/config/drivers';
+import { TeamsService } from 'src/app/services/teams-service';
 
 @Component({
   selector: 'app-driver-card',
@@ -14,19 +16,21 @@ import { IonicModule } from '@ionic/angular';
 })
 export class DriverCardComponent  implements OnInit, OnDestroy, AfterViewInit {
 
-  @Input() team!: Team;
   @Input() driver!: Driver;
   @Input() boxMode?: Boolean = false;
 
   @Output() select = new EventEmitter<Driver>();
 
+  team!: Team; 
   neonFinished: Record<string, boolean> = {};
   seen: Record<string, boolean> = {};
   observer!: IntersectionObserver;
 
-  constructor(private utilityService: UtilityService) { }
+  constructor(private utilityService: UtilityService, private teamService: TeamsService) { }
 
   ngOnInit(): void {
+    this.team = this.teamService.getTeamById(this.driver.teamId);
+
     this.observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {

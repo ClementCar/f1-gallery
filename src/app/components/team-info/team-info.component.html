@@ -1,13 +1,13 @@
 <ion-content class="page-content" [fullscreen]="true">
-  <section class="wall" [style.--base]="team.color" [style.--light]="lightenDarkenColor(team.color, 40)" [style.--dark]="lightenDarkenColor(team.color, -40)">
-    <ion-title>{{ team.name | uppercase}}</ion-title>
+  <section class="wall" [style.--base]="team.team.color" [style.--light]="lightenDarkenColor(team.team.color, 40)" [style.--dark]="lightenDarkenColor(team.team.color, -40)">
+    <ion-title>{{ team.team.name | uppercase}}</ion-title>
     <div class="stand">
       <div class="stand__bar"></div>
       <div class="stand__boxes flex">
         @for (driver of team.drivers; track driver.name) {
           <div class="stand__boxes__box">
 
-            <app-driver-card [driver]="driver" [team]="team" [boxMode]="true" (select)="selectDriver($event)"></app-driver-card>
+            <app-driver-card [driver]="driver" [boxMode]="true" (select)="selectDriver($event)"></app-driver-card>
 
             <div class="stand__boxes__box__garage">
               <div class="ceiling-lines"></div>
@@ -18,7 +18,7 @@
         }
       </div>
     </div>
-    <img class="team-car" [src]="'/assets/teams/' + getText(team.name) + '/car.avif'" [alt]="team.name + ' car'">
+    <img class="team-car" [src]="'/assets/teams/' + getText(team.team.name) + '/car.avif'" [alt]="team.team.name + ' car'">
   </section>
   <section class="info w-100">
   </section>

@@ -8,7 +8,8 @@
     },
     "PAGE": {
         "TITLE-TEAMS": "Écuries de F1",
-        "TITLE-DRIVERS": "Pilotes de F1"
+        "TITLE-DRIVERS": "Pilotes de F1",
+        "STAT": "Statistiques de Carrière"
     }, 
     "INFO": {
         "BACK": "Retour"
@@ -34,6 +35,16 @@
         "BORTOLETO": "Gabriel Bortoleto, né le 14 octobre 2004 au Brésil, est un jeune pilote brésilien d’Audi, poursuivant sa progression après une brillante carrière junior.",
         "GASLY": "Pierre Gasly, né le 7 février 1996 en France, est un pilote français de Formule 1 engagé avec Alpine pour la saison 2026. Il a débuté en F1 en 2017 avec Toro Rosso avant de rejoindre Red Bull, puis de revenir à une écurie sœur avant de s’installer chez Alpine, où il est reconnu pour son intelligence de course et sa ténacité."
 
+    },
+    "STAT": {
+        "GP": "Grand Prix Inscrit",
+        "POINTS": "Points de carrière",
+        "FINISH": "Meilleur Résultat en Course",
+        "PODIUM": "Podiums",
+        "GRID": "Position la plus élevée sur la grille",
+        "POLE": "Pôles Positions",
+        "CHAMPION": "Championnats du Monde",
+        "DNF": "DNFs"
     }
     
 }

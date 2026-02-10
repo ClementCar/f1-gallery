@@ -24,37 +24,20 @@
         </div>
       </ion-col>
 
-      <ion-col size="4" class="flex-column ion-justify-content-end">
+      <ion-col size="4" class="flex-column ion-justify-content-end ion-align-items-center">
         <img class="number" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
         <ion-item-group class="w-100">
           <ion-item-divider>
-            Stat
+            {{ 'PAGE.STAT' | translate }}
           </ion-item-divider>
 
-          <ion-item>
-            <ion-label>Gp entered</ion-label>
-            <ion-note>27</ion-note>
-          </ion-item>
-          <ion-item>
-            <ion-label>Gp entered</ion-label>
-            <ion-note>27</ion-note>
-          </ion-item>
-          <ion-item>
-            <ion-label>Career points</ion-label>
-            <ion-note>1000</ion-note>
-          </ion-item>
-          <ion-item>
-            <ion-label>highest race finish</ion-label>
-            <ion-note>1</ion-note>
-          </ion-item>
-          <ion-item>
-            <ion-label>Pole position</ion-label>
-            <ion-note>2</ion-note>
-          </ion-item>
-          <ion-item>
-            <ion-label>worlds chammpionship</ion-label>
-            <ion-note>0</ion-note>
-          </ion-item>
+          @for (stat of stats; track $index) {
+            <ion-item>
+              <ion-label>{{ `STAT.${stat.key}` | translate }}</ion-label>
+              <ion-note>{{ stat.value }}</ion-note>
+            </ion-item>
+          }
+
         </ion-item-group>
       </ion-col>
     </ion-row>

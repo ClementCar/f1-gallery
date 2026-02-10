@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonContent } from "@ionic/angular/standalone";
-import { Driver, Team } from 'src/app/config/teams';
+import { Driver } from 'src/app/config/drivers';
+import { Team } from 'src/app/config/teams';
 import { AnimatedBackgroundService } from 'src/app/services/animated-background-service';
 import { TeamsService } from 'src/app/services/teams-service';
 import { UtilityService } from 'src/app/services/utility';
@@ -16,6 +17,7 @@ export class DriverInfoComponent  implements OnInit , AfterViewInit{
   @ViewChild('bgContainer') bgContainer!: ElementRef;
   
   current!: { team: Team, driver: Driver} | null;
+  stats: DriverStat[] = [];
   name!: string;
 
   constructor(private utilityService: UtilityService, private activatedRoute: ActivatedRoute,
@@ -24,7 +26,18 @@ export class DriverInfoComponent  implements OnInit , AfterViewInit{
 
   ngOnInit() {
     this.name = this.activatedRoute.snapshot.paramMap.get('name')!;
-    this.current = this.teamService.getDriverTeam(this.name);
+    this.current = this.teamService.getOneDriverWithTeam(this.name);
+
+    this.stats = [
+      { key: "GP", value: this.current.driver.stat.gp+'' },
+      { key: "POINTS", value: this.current.driver.stat.point+''},
+      { key: "FINISH", value: this.current.driver.stat.finish },
+      { key: "PODIUM", value: this.current.driver.stat.podium+'' },
+      { key: "GRID", value: this.current.driver.stat.grid },
+      { key: "POLE", value: this.current.driver.stat.pole+'' },
+      { key: "CHAMPION", value: this.current.driver.stat.champion+'' },
+      { key: "DNF", value: this.current.driver.stat.dnf+'' }
+    ]
 
   }
 
@@ -47,4 +60,9 @@ export class DriverInfoComponent  implements OnInit , AfterViewInit{
     return this.utilityService.getLowerText(name);
   }
 
+}
+
+interface DriverStat {
+  key: string;
+  value: string;
 }

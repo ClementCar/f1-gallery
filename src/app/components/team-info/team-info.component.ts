@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Driver, Team } from 'src/app/config/teams';
+import { Driver } from 'src/app/config/drivers';
+import { Team, TeamAndDriver } from 'src/app/config/teams';
 import { TeamsService } from 'src/app/services/teams-service';
 import { TransitionService } from 'src/app/services/transition-service';
 import { UtilityService } from 'src/app/services/utility';
@@ -14,7 +15,7 @@ import { UtilityService } from 'src/app/services/utility';
 export class TeamInfoComponent  implements OnInit {
 
   name!: string;
-  team!: Team;
+  team!: TeamAndDriver;
 
   constructor(private route: ActivatedRoute, private teamService: TeamsService, private utilityService: UtilityService,
               private transitionService: TransitionService
@@ -22,7 +23,7 @@ export class TeamInfoComponent  implements OnInit {
 
   ngOnInit() {
     this.name = this.route.snapshot.paramMap.get('name')!;
-    this.team = this.teamService.getTeam(this.name)!;
+    this.team = this.team = this.teamService.getOneTeamWithDriver(this.name);
   }
 
   lightenDarkenColor(col: string, amt: number): string {

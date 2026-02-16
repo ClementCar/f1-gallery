@@ -95,3 +95,13 @@ ion-item-divider{
 ion-item{
      --background: transparent;
 }
+
+.label{
+    width: 70%;
+}
+
+.stat{
+    width: 30%;
+    display: flex;
+    justify-content: end;
+}

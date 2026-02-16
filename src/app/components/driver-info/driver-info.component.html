@@ -32,9 +32,14 @@
           </ion-item-divider>
 
           @for (stat of stats; track $index) {
-            <ion-item>
-              <ion-label>{{ `STAT.${stat.key}` | translate }}</ion-label>
-              <ion-note>{{ stat.value }}</ion-note>
+            <ion-item lines="none">
+              <ion-label class="label">{{ `STAT.${stat.key}` | translate }}</ion-label>
+              <ion-label class="stat">
+                {{ stat.value }}
+                @if ( stat.count ) {
+                  <p class="stat__count"> ({{stat.count}})</p>
+                }
+              </ion-label>
             </ion-item>
           }
 

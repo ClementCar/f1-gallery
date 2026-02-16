@@ -7,9 +7,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 152,
         point: 1430,
-        finish: "1 (x11)",
+        finish: {
+          nb: 1,
+          ct: 11
+        },
         podium: 44,
-        grid: "1 (x16)",
+        grid: {
+          nb: 1,
+          ct: 16
+        },
         pole: 16,
         champion: 1,
         dnf: 13
@@ -23,9 +29,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 70,
         point: 1033,
-        finish: "1 (x5)",
+        finish: {
+          nb: 1,
+          ct: 5
+        },
         podium: 24,
-        grid: "1 (x8)",
+        grid: {
+          nb: 1,
+          ct: 8
+        },
         pole: 7,
         champion: 0,
         dnf: 19
@@ -39,9 +51,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 152,
         point: 1430,
-        finish: "1 (x11)",
+        finish: {
+          nb: 1,
+          ct: 11
+        },
         podium: 24,
-        grid: "1 (x16)",
+        grid: {
+          nb: 1,
+          ct: 16
+        },
         pole: 16,
         champion: 1,
         dnf: 13
@@ -55,9 +73,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 24,
         point: 150,
-        finish: "2 (x1)",
+        finish: {
+          nb: 2,
+          ct: 1
+        },
         podium: 3,
-        grid: "2 (x1)",
+        grid: {
+          nb: 2,
+          ct: 1
+        },
         pole: 0,
         champion: 0,
         dnf: 4
@@ -71,9 +95,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 233,
         point: 3444.5,
-        finish: "1 (x71)",
+        finish: {
+          nb: 1,
+          ct: 71
+        },
         podium: 127,
-        grid: "1 (x48)",
+        grid: {
+          nb: 1,
+          ct: 48
+        },
         pole: 48,
         champion: 4,
         dnf: 33
@@ -87,9 +117,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 23,
         point: 51,
-        finish: "3 (x1)",
+        finish: {
+          nb: 3,
+          ct: 1
+        },
         podium: 1,
-        grid: "4 (x1)",
+        grid: {
+          nb: 4,
+          ct: 1
+        },
         pole: 0,
         champion: 0,
         dnf: 2
@@ -103,9 +139,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 380,
         point: 5018.5,
-        finish: "1 (x105)",
+        finish: {
+          nb: 1,
+          ct: 105
+        },
         podium: 202,
-        grid: "1 (x104)",
+        grid: {
+          nb: 1,
+          ct: 104
+        },
         pole: 104,
         champion: 7,
         dnf: 34
@@ -119,9 +161,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 171,
         point: 1672,
-        finish: "1 (x18)",
+        finish: {
+          nb: 1,
+          ct: 18
+        },
         podium: 50,
-        grid: "1 (x27)",
+        grid: {
+          nb: 1,
+          ct: 27
+        },
         pole: 27,
         champion: 0,
         dnf: 23
@@ -135,9 +183,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 230,
         point: 1336.5,
-        finish: "1 (x14)",
+        finish: {
+          nb: 1,
+          ct: 14
+        },
         podium: 29,
-        grid: "1 (x16)",
+        grid: {
+          nb: 1,
+          ct: 16
+        },
         pole: 6,
         champion: 0,
         dnf: 42
@@ -151,9 +205,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 128,
         point: 313,
-        finish: "3 (x2)",
+        finish: {
+          nb: 3,
+          ct: 2
+        },
         podium: 2,
-        grid: "4 (x5)",
+        grid: {
+          nb: 4,
+          ct: 5
+        },
         pole: 0,
         champion: 0,
         dnf: 22
@@ -167,9 +227,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 35,
         point: 44,
-        finish: "5 (x1)",
+        finish: {
+          nb: 5,
+          ct: 1
+        },
         podium: 0,
-        grid: "3 (x1)",
+        grid: {
+          nb: 3,
+          ct: 1
+        },
         pole: 0,
         champion: 0,
         dnf: 6
@@ -183,9 +249,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 0,
         point: 0,
-        finish: "0",
+        finish: {
+          nb: 0,
+          ct: 0
+        },
         podium: 0,
-        grid: "0",
+        grid: {
+          nb: 0,
+          ct: 0
+        },
         pole: 0,
         champion: 0,
         dnf: 0
@@ -199,9 +271,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 427,
         point: 2393,
-        finish: "1 (x32)",
+        finish: {
+          nb: 1,
+          ct: 32
+        },
         podium: 106,
-        grid: "1 (x22)",
+        grid: {
+          nb: 1,
+          ct: 22
+        },
         pole: 22,
         champion: 2,
         dnf: 83
@@ -215,9 +293,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 190,
         point: 325,
-        finish: "3 (x3)",
+        finish: {
+          nb: 3,
+          ct: 3
+        },
         podium: 3,
-        grid: "1 (x1)",
+        grid: {
+          nb: 1,
+          ct: 1
+        },
         pole: 1,
         champion: 0,
         dnf: 31
@@ -231,9 +315,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 180,
         point: 483,
-        finish: "1 (x1)",
+        finish: {
+          nb: 1,
+          ct: 1
+        },
         podium: 4,
-        grid: "3 (x3)",
+        grid: {
+          nb: 3,
+          ct: 3
+        },
         pole: 0,
         champion: 0,
         dnf: 25
@@ -247,9 +337,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 27,
         point: 48,
-        finish: "4 (x1)",
+        finish: {
+          nb: 4,
+          ct: 1
+        },
         podium: 0,
-        grid: "8 (x2)",
+        grid: {
+          nb: 8,
+          ct: 2
+        },
         pole: 0,
         champion: 0,
         dnf: 16
@@ -263,9 +359,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 251,
         point: 622,
-        finish: "3 (x1)",
+        finish: {
+          nb: 3,
+          ct: 1
+        },
         podium: 1,
-        grid: "1 (x1)",
+        grid: {
+          nb: 1,
+          ct: 1
+        },
         pole: 1,
         champion: 0,
         dnf: 44
@@ -279,9 +381,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 24,
         point: 19,
-        finish: "6 (x1)",
+        finish: {
+          nb: 6,
+          ct: 1
+        },
         podium: 0,
-        grid: "7 (x3)",
+        grid: {
+          nb: 7,
+          ct: 3
+        },
         pole: 0,
         champion: 0,
         dnf: 5
@@ -295,9 +403,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 177,
         point: 458,
-        finish: "1 (x1)",
+        finish: {
+          nb: 1,
+          ct: 1
+        },
         podium: 5,
-        grid: "2 (x1)",
+        grid: {
+          nb: 2,
+          ct: 1
+        },
         pole: 0,
         champion: 0,
         dnf: 26
@@ -311,9 +425,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 27,
         point: 5,
-        finish: "8 (x1)",
+        finish: {
+          nb: 8,
+          ct: 1
+        },
         podium: 0,
-        grid: "8 (x1)",
+        grid: {
+          nb: 8,
+          ct: 1
+        },
         pole: 0,
         champion: 0,
         dnf: 3
@@ -327,9 +447,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 281,
         point: 1638,
-        finish: "1 (x6)",
+        finish: {
+          nb: 1,
+          ct: 6
+        },
         podium: 39,
-        grid: "1 (x3)",
+        grid: {
+          nb: 1,
+          ct: 3
+        },
         pole: 3,
         champion: 0,
         dnf: 39
@@ -343,9 +469,15 @@ export const Drivers: Driver[] = [
     stat: {
         gp: 246,
         point: 1797,
-        finish: "1 (x10)",
+        finish: {
+          nb: 1,
+          ct: 10
+        },
         podium: 67,
-        grid: "1 (x20)",
+        grid: {
+          nb: 1,
+          ct: 20
+        },
         pole: 20,
         champion: 0,
         dnf: 28
@@ -366,9 +498,15 @@ export interface Driver {
   stat: {
     gp: number,
     point: number,
-    finish: string,
+    finish: {
+      nb: number,
+      ct: number
+    },
     podium: number,
-    grid: string,
+    grid: {
+      nb: number,
+      ct: number
+    },
     pole: number,
     champion: number,
     dnf: number
@@ -380,7 +518,7 @@ export interface Nationality {
   image: string;
 }
 
-export interface Stat {
-    label: string,
-    number: string
-}
+// export interface Stat {
+//     label: string,
+//     number: string
+// }

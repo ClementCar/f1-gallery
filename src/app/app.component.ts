@@ -13,7 +13,7 @@ import { AnimationItem } from 'lottie-web';
 export class AppComponent {
 
   options = {
-    path: '/assets/lotties/Facebook.json',
+    path: '/assets/lotties/F1 logo anim.json',
     loop: true,
     autoplay: true
   }
@@ -33,6 +33,6 @@ export class AppComponent {
 
   animationCreated(animation: AnimationItem){
     this.anim = animation;
-    this.anim.setSpeed(3);
+    this.anim.setSpeed(5);
   }
 }

@@ -29,14 +29,14 @@ export class DriverInfoComponent  implements OnInit , AfterViewInit{
     this.current = this.teamService.getOneDriverWithTeam(this.name);
 
     this.stats = [
-      { key: "GP", value: this.current.driver.stat.gp+'' },
-      { key: "POINTS", value: this.current.driver.stat.point+''},
-      { key: "FINISH", value: this.current.driver.stat.finish },
-      { key: "PODIUM", value: this.current.driver.stat.podium+'' },
-      { key: "GRID", value: this.current.driver.stat.grid },
-      { key: "POLE", value: this.current.driver.stat.pole+'' },
-      { key: "CHAMPION", value: this.current.driver.stat.champion+'' },
-      { key: "DNF", value: this.current.driver.stat.dnf+'' }
+      { key: "GP", value: this.current.driver.stat.gp },
+      { key: "POINTS", value: this.current.driver.stat.point },
+      { key: "FINISH", value: this.current.driver.stat.finish.nb, count: this.current.driver.stat.finish.ct },
+      { key: "PODIUM", value: this.current.driver.stat.podium },
+      { key: "GRID", value: this.current.driver.stat.grid.nb, count: this.current.driver.stat.grid.ct },
+      { key: "POLE", value: this.current.driver.stat.pole },
+      { key: "CHAMPION", value: this.current.driver.stat.champion  },
+      { key: "DNF", value: this.current.driver.stat.dnf }
     ]
 
   }
@@ -64,5 +64,6 @@ export class DriverInfoComponent  implements OnInit , AfterViewInit{
 
 interface DriverStat {
   key: string;
-  value: string;
+  value: number;
+  count?: number;
 }

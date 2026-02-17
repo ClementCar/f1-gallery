@@ -36,9 +36,11 @@
               <ion-label class="label">{{ `STAT.${stat.key}` | translate }}</ion-label>
               <ion-label class="stat">
                 {{ stat.value }}
+
                 @if ( stat.count ) {
                   <p class="stat__count"> ({{stat.count}})</p>
                 }
+                
               </ion-label>
             </ion-item>
           }

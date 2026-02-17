@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IonContent } from "@ionic/angular/standalone";
 import { Driver } from 'src/app/config/drivers';
 import { Team } from 'src/app/config/teams';
 import { AnimatedBackgroundService } from 'src/app/services/animated-background-service';
@@ -11,17 +10,20 @@ import { UtilityService } from 'src/app/services/utility';
   selector: 'app-driver-info',
   templateUrl: './driver-info.component.html',
   styleUrls: ['./driver-info.component.scss'],
-  standalone: false
+  standalone: false,
 })
-export class DriverInfoComponent  implements OnInit , AfterViewInit{
+export class DriverInfoComponent implements OnInit, AfterViewInit {
   @ViewChild('bgContainer') bgContainer!: ElementRef;
-  
-  current!: { team: Team, driver: Driver} | null;
+
+  current!: { team: Team; driver: Driver } | null;
   stats: DriverStat[] = [];
   name!: string;
 
-  constructor(private utilityService: UtilityService, private activatedRoute: ActivatedRoute,
-              private teamService: TeamsService, private el: ElementRef, private bgService: AnimatedBackgroundService
+  constructor(
+    private utilityService: UtilityService,
+    private activatedRoute: ActivatedRoute,
+    private teamService: TeamsService,
+    private bgService: AnimatedBackgroundService,
   ) {}
 
   ngOnInit() {
@@ -29,37 +31,35 @@ export class DriverInfoComponent  implements OnInit , AfterViewInit{
     this.current = this.teamService.getOneDriverWithTeam(this.name);
 
     this.stats = [
-      { key: "GP", value: this.current.driver.stat.gp },
-      { key: "POINTS", value: this.current.driver.stat.point },
-      { key: "FINISH", value: this.current.driver.stat.finish.nb, count: this.current.driver.stat.finish.ct },
-      { key: "PODIUM", value: this.current.driver.stat.podium },
-      { key: "GRID", value: this.current.driver.stat.grid.nb, count: this.current.driver.stat.grid.ct },
-      { key: "POLE", value: this.current.driver.stat.pole },
-      { key: "CHAMPION", value: this.current.driver.stat.champion  },
-      { key: "DNF", value: this.current.driver.stat.dnf }
-    ]
-
+      { key: 'GP', value: this.current.driver.stat.gp },
+      { key: 'POINTS', value: this.current.driver.stat.point },
+      { key: 'FINISH', value: this.current.driver.stat.finish.nb, count: this.current.driver.stat.finish.ct },
+      { key: 'PODIUM', value: this.current.driver.stat.podium },
+      { key: 'GRID', value: this.current.driver.stat.grid.nb, count: this.current.driver.stat.grid.ct },
+      { key: 'POLE', value: this.current.driver.stat.pole },
+      { key: 'CHAMPION', value: this.current.driver.stat.champion },
+      { key: 'DNF', value: this.current.driver.stat.dnf },
+    ];
   }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-    if (this.bgContainer) {
-      this.bgService.create(this.bgContainer.nativeElement, {
-        number: this.current?.driver.number + '' || '37',
-        primaryColor: this.current?.team.color || '#3cf2ff'
-      });
-    }
-  }, 500);
+      if (this.bgContainer) {
+        this.bgService.create(this.bgContainer.nativeElement, {
+          number: this.current?.driver.number + '' || '37',
+          primaryColor: this.current?.team.color || '#3cf2ff',
+        });
+      }
+    }, 500);
   }
 
-  lightenDarkenColor(color: string, amt: number){
+  lightenDarkenColor(color: string, amt: number) {
     return this.utilityService.getlightenDarkenColor(color, amt);
   }
 
-  getLower(name: string){
+  getLower(name: string) {
     return this.utilityService.getLowerText(name);
   }
-
 }
 
 interface DriverStat {

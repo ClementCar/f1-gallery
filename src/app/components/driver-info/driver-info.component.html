@@ -5,8 +5,8 @@
             [style.--dark]="lightenDarkenColor(current.team.color, -40)">
       <ion-col size="12" sizeMd="8" class="flex">
 
-        <div class="flex-column ion-justify-content-center" style="width: 300px;">
-          <div class="driver-title">
+        <div class="col-info" [class.col-info__mobile]="platform.is('mobile')">
+          <div class="driver-title" [class.driver-title__mobile]="platform.is('mobile')">
             <h2 class="name windsong-regular">{{ current.driver.name }}</h2>
             <h2 class="surname audiowide-regular">{{ current.driver.lastname }}</h2>
           </div>
@@ -19,34 +19,62 @@
           </div>
         </div>
 
-        <div class="col-img">
+        <div class="col-img" [class.col-img__mobile]="platform.is('mobile')">
           <img [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/picture.avif'" alt="">
         </div>
       </ion-col>
 
-      <ion-col size="4" class="flex-column ion-justify-content-end ion-align-items-center">
-        <img class="number" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
-        <ion-item-group class="w-100">
-          <ion-item-divider>
-            {{ 'PAGE.STAT' | translate }}
-          </ion-item-divider>
+      @if (!platform.is('mobile')) {
+        <ion-col size="4" class="flex-column ion-justify-content-end ion-align-items-center">
+          <img class="number" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
+          <ion-item-group class="w-100">
+            <ion-item-divider>
+              {{ 'PAGE.STAT' | translate }}
+            </ion-item-divider>
 
-          @for (stat of stats; track $index) {
-            <ion-item lines="none">
-              <ion-label class="label">{{ `STAT.${stat.key}` | translate }}</ion-label>
-              <ion-label class="stat">
-                {{ stat.value }}
+            @for (stat of stats; track $index) {
+              <ion-item lines="none">
+                <ion-label class="label">{{ `STAT.${stat.key}` | translate }}</ion-label>
+                <ion-label class="stat">
+                  {{ stat.value }}
 
-                @if ( stat.count ) {
-                  <p class="stat__count"> ({{stat.count}})</p>
-                }
-                
-              </ion-label>
-            </ion-item>
-          }
+                  @if ( stat.count ) {
+                    <p class="stat__count"> ({{stat.count}})</p>
+                  }
 
-        </ion-item-group>
+                </ion-label>
+              </ion-item>
+            }
+
+          </ion-item-group>
       </ion-col>
+      }
+
     </ion-row>
+    
   }
+
+  <ion-button id="open-modal">op</ion-button>
 </ion-content>
+
+@if (platform.is('mobile') && stats && current) {
+  <ion-modal trigger="open-modal" [initialBreakpoint]="0.1" isOpen="true" mode="ios" [breakpoints]="[0.1, 0.6]">
+    <ng-template>
+      <ion-content>
+        <ion-list>
+          @for (stat of stats; track stat.key) {
+          <ion-item lines="none">
+            <ion-label class="label">{{ `STAT.${stat.key}` | translate }}</ion-label>
+            <ion-label class="stat">
+              {{ stat?.value }}
+              @if ( stat.count ) {
+                <p class="stat__count"> ({{stat.count}})</p>
+              }
+            </ion-label>
+          </ion-item>
+        }
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+}

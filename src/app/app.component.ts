@@ -33,6 +33,6 @@ export class AppComponent {
 
   animationCreated(animation: AnimationItem){
     this.anim = animation;
-    this.anim.setSpeed(5);
+    this.anim.setSpeed(2);
   }
 }

@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Platform } from '@ionic/angular';
 import { Driver } from 'src/app/config/drivers';
 import { Team } from 'src/app/config/teams';
 import { AnimatedBackgroundService } from 'src/app/services/animated-background-service';
@@ -18,12 +19,14 @@ export class DriverInfoComponent implements OnInit, AfterViewInit {
   current!: { team: Team; driver: Driver } | null;
   stats: DriverStat[] = [];
   name!: string;
+  canOpen: boolean = false;
 
   constructor(
     private utilityService: UtilityService,
     private activatedRoute: ActivatedRoute,
     private teamService: TeamsService,
     private bgService: AnimatedBackgroundService,
+    public platform: Platform
   ) {}
 
   ngOnInit() {
@@ -50,7 +53,10 @@ export class DriverInfoComponent implements OnInit, AfterViewInit {
           primaryColor: this.current?.team.color || '#3cf2ff',
         });
       }
+      console.log(this.stats)
+      this.canOpen = true;
     }, 500);
+    
   }
 
   lightenDarkenColor(color: string, amt: number) {

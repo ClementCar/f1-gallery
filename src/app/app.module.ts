@@ -28,7 +28,22 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent, DriverInfoComponent, TeamInfoComponent ],
   imports: [
     BrowserModule, 
-    IonicModule.forRoot(), 
+    IonicModule.forRoot({
+      platform: {
+        'mobile': (win) => {
+          const isMobile = (win.innerWidth < 768) ? true: false;
+          return isMobile;
+        },
+        'tablet': (win) => {
+          const isTablet = (win.innerWidth > 768 && win.innerWidth < 972) ? true : false;
+          return isTablet;
+        },
+        'desktop': (win) => {
+          const isDesktop = (win.innerWidth > 972 ) ? true : false;
+          return isDesktop;
+        }
+      }
+    }), 
     AppRoutingModule,
     TranslateModule.forRoot({
       loader: {

@@ -80,6 +80,10 @@
   }
 }
 
+.hide{
+  display: none !important;
+}
+
 .hidden{
     animation: appearOff .6s ease forwards;
 }

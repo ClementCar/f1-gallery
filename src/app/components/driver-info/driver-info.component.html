@@ -54,13 +54,16 @@
     
   }
 
-  <ion-button id="open-modal">op</ion-button>
+  <ion-button id="open-modal" class="hide">op</ion-button>
 </ion-content>
 
 @if (platform.is('mobile') && stats && current) {
   <ion-modal trigger="open-modal" [initialBreakpoint]="0.1" isOpen="true" mode="ios" [breakpoints]="[0.1, 0.6]">
     <ng-template>
       <ion-content>
+        <ion-item>
+          <img src="../../../assets/logo/f1-logo-white.svg" alt="">
+        </ion-item>
         <ion-list>
           @for (stat of stats; track stat.key) {
           <ion-item lines="none">

@@ -29,7 +29,8 @@
           <img class="number" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
           <ion-item-group class="w-100">
             <ion-item-divider>
-              {{ 'PAGE.STAT' | translate }}
+              <img src="/assets/logo/f1-logo-white.svg" class="logo-white" alt="F1 logo white">
+              <ion-label slot="end">{{ 'PAGE.STAT' | translate }}</ion-label>
             </ion-item-divider>
 
             @for (stat of stats; track $index) {
@@ -62,7 +63,8 @@
     <ng-template>
       <ion-content>
         <ion-item>
-          <img src="../../../assets/logo/f1-logo-white.svg" alt="">
+          <img src="/assets/logo/f1-logo-white.svg" class="logo-white" alt="F1 logo white">
+          <ion-label slot="end">{{ 'PAGE.STAT' | translate }}</ion-label>
         </ion-item>
         <ion-list>
           @for (stat of stats; track stat.key) {

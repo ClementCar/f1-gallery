@@ -1,9 +1,8 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
 
-  @if (transitionVisible()) {
-    <div class="transition-overlay" [class.leaving]="isLeaving()">
-      <ng-lottie [options]="options" width="200px" (animationCreated)="animationCreated($event)"></ng-lottie>
-    </div>
-  }
+  <div class="transition-overlay" [class.active]="transitionVisible()" [class.leaving]="isLeaving()">
+    <ng-lottie [options]="options" width="200px" (animationCreated)="animationCreated($event)"></ng-lottie>
+  </div>
+
 </ion-app>

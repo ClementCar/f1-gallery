@@ -1,5 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { AnimationItem } from 'lottie-web';
 import { filter } from 'rxjs';
 
 @Injectable({
@@ -9,6 +10,7 @@ export class TransitionService {
   visible = signal(false);
   leaving = signal(false);
   manualNavigation: boolean = false;
+  private animation?: AnimationItem;
 
   constructor(private router: Router) {
     // this.router.events
@@ -27,19 +29,23 @@ export class TransitionService {
     //   })
   }
 
-  async navigate(commands: any[], delay = 600) {
+  setAnimation(anim: AnimationItem){
+    this.animation = anim;
+  }
+
+  async navigate(commands: any[], delay = 900) {
     this.visible.set(true);
     this.leaving.set(false);
+
+    this.animation?.goToAndPlay(0, true);
 
     await this.sleep(delay);
 
     await this.router.navigate(commands);
-    
-    await this.sleep(200);
-    
+        
     this.leaving.set(true);
 
-    await this.sleep(400); // durée CSS
+    await this.sleep(800); // durée CSS
 
     this.visible.set(false);
     this.leaving.set(false);

@@ -1,11 +1,19 @@
-import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import { Injectable, OnInit, Renderer2, RendererFactory2 } from '@angular/core';
+import { Platform } from '@ionic/angular';
 
 @Injectable({ providedIn: 'root' })
-export class AnimatedBackgroundService {
+export class AnimatedBackgroundService implements OnInit {
   private renderer: Renderer2;
+  leftRec: number = 325
 
-  constructor(private rendererFactory: RendererFactory2) {
+  constructor(private rendererFactory: RendererFactory2, public platform: Platform) {
     this.renderer = this.rendererFactory.createRenderer(null, null);
+  }
+
+  ngOnInit(): void {
+    if(this.platform.is('mobile')){
+      this.leftRec = 50
+    }
   }
 
   create( host: HTMLElement, options?: { number?: string; primaryColor?: string }, ) {
@@ -55,9 +63,9 @@ export class AnimatedBackgroundService {
 
     this.apply(svg, {
       position: 'absolute',
-      left: '325px',
+      left: `${this.platform.is('mobile') ? 75 : 325}px`,
       top: '18%',
-      width: '30%',
+      width: `${this.platform.is('mobile') ? 70 : 30}%`,
       maxWidth: '260px',
       minWidth: '150px',
       height: '60%',
@@ -153,7 +161,7 @@ export class AnimatedBackgroundService {
       { left: "22%", top: "79%", width: "1200px", height: "2px" },
 
       // Ligne verticale fine à gauche
-      { left: "270px", top: "0%",  width: "2px", height: "900px" },
+      { left: `${this.platform.is('mobile') ? 50 : 270}px`, top: "0%",  width: "2px", height: "900px" },
 
       // Ligne horizontale droite
       { left: "58%", top: "32%", width: "900px", height: "2px" }

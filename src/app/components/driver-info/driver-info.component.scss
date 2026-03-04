@@ -99,7 +99,7 @@ hr{
         }
     &__mobile{
         position: absolute;
-        opacity: 0.5;
+        opacity: 0.8;
         // z-index: 0;
     }
 }
@@ -114,6 +114,18 @@ hr{
     opacity: 0.6;
 }
 
+ion-modal{
+    --background: transparent;
+    & ion-content{
+        --background: rgba(var(--ion-color-background-rgb), 0.85);
+    }
+    ion-item{
+        height: 10%;
+        &::part(native){
+            height: 100%;
+        }
+    }
+}
 
 ion-item-group{
     margin-top: 25px;

@@ -15,7 +15,7 @@ export class AppComponent {
   options = {
     path: '/assets/lotties/F1 logo anim.json',
     loop: true,
-    autoplay: true
+    autoplay: false
   }
 
   private anim?: AnimationItem;
@@ -33,6 +33,14 @@ export class AppComponent {
 
   animationCreated(animation: AnimationItem){
     this.anim = animation;
-    this.anim.setSpeed(2);
+    this.transition.setAnimation(this.anim);
+    this.anim.setSpeed(1.8);
+
+    // this.anim.addEventListener('complete', () => {
+    //   if(this.transition.leaving()){
+    //     this.transition.visible.set(false);
+    //     this.transition.leaving.set(false);
+    //   }
+    // })
   }
 }

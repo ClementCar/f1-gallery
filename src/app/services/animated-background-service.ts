@@ -16,9 +16,9 @@ export class AnimatedBackgroundService implements OnInit {
     }
   }
 
-  create( host: HTMLElement, options?: { number?: string; primaryColor?: string }, ) {
+  create( host: HTMLElement, options?: { primaryColor: string, secondaryColor: string, tertiaryColor: string}, ) {
     if (!host) return;
-    const { number = '37', primaryColor = '#3cf2ff' } = options || {};
+    const { primaryColor = '#3cf2ff', secondaryColor = '', tertiaryColor = '' } = options || {};
 
     host.innerHTML = '';
 
@@ -136,7 +136,7 @@ export class AnimatedBackgroundService implements OnInit {
     this.renderer.appendChild(svg, bgRect);
     this.renderer.appendChild(svg, rect);
     this.renderer.appendChild(host, svg);
-    this.addBackgroundDecorations(container, primaryColor);
+    this.addBackgroundDecorations(container, primaryColor, secondaryColor, tertiaryColor);
   }
 
   private apply(el: HTMLElement, styles: any) {
@@ -146,7 +146,7 @@ export class AnimatedBackgroundService implements OnInit {
   }
 
   //  Ajout elements
-  private addBackgroundDecorations(container: HTMLElement, primary: string) {
+  private addBackgroundDecorations(container: HTMLElement, primary: string, secondary: string, tertiary: string) {
     const svgNS = "http://www.w3.org/2000/svg";
 
     // === POSITIONS FIXES (calquées sur ton image) ===
@@ -164,7 +164,7 @@ export class AnimatedBackgroundService implements OnInit {
       { left: `${this.platform.is('mobile') ? 50 : 270}px`, top: "0%",  width: "2px", height: "900px" },
 
       // Ligne horizontale droite
-      { left: "58%", top: "32%", width: "900px", height: "2px" }
+      // { left: "58%", top: "32%", width: "900px", height: "2px" }
     ];
 
     lines.forEach((pos, i) => {
@@ -197,7 +197,7 @@ export class AnimatedBackgroundService implements OnInit {
       }
 
       // Alternance : couleur team / rouge comme sur l’image
-      const color = i % 2 === 0 ? primary : "#ff1a1a99";
+      const color = (i === 3 || i === 1) ? tertiary : secondary;
 
       this.renderer.setAttribute(line, 'stroke', color);
       this.renderer.setAttribute(line, 'stroke-width', '1');
@@ -231,9 +231,9 @@ export class AnimatedBackgroundService implements OnInit {
         top: pos.top,
         width: '4px',
         height: '4px',
-        backgroundColor: i % 2 === 0 ? primary : '#ff1a1a',
+        backgroundColor: primary,
         borderRadius: '50%',
-        boxShadow: `0 0 12px ${i % 2 === 0 ? primary : '#ff1a1a'}`,
+        boxShadow: `0 0 12px ${primary}`,
         zIndex: '2'
       });
 

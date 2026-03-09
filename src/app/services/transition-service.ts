@@ -39,13 +39,15 @@ export class TransitionService {
 
     this.animation?.goToAndPlay(0, true);
 
-    await this.sleep(delay);
+    await this.sleep(500);
 
     await this.router.navigate(commands);
-        
+
+    await this.sleep(350);
+    // await this.sleep(200); // durée CSS
     this.leaving.set(true);
 
-    await this.sleep(800); // durée CSS
+    await this.sleep(800);
 
     this.visible.set(false);
     this.leaving.set(false);

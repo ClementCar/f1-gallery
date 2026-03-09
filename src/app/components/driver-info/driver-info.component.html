@@ -11,7 +11,6 @@
             <h2 class="surname audiowide-regular">{{ current.driver.lastname }}</h2>
           </div>
 
-
           <div class="ion-margin-top driver-bio">
             <!-- <p>BIO</p> -->
             <p class="ion-margin-top">{{current.team.name}}</p>
@@ -20,13 +19,13 @@
         </div>
 
         <div class="col-img" [class.col-img__mobile]="platform.is('mobile')">
-          <img [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/picture.avif'" alt="">
+          <img class="picture" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/picture.avif'" alt="">
+          <img class="number" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
         </div>
       </ion-col>
 
       @if (!platform.is('mobile')) {
-        <ion-col size="4" class="flex-column ion-justify-content-end ion-align-items-center">
-          <img class="number" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
+        <ion-col size="4" class="flex-column ion-justify-content-center ion-align-items-center">
           <ion-item-group class="w-100">
             <ion-item-divider>
               <img src="/assets/logo/f1-logo-white.svg" class="logo-white" alt="F1 logo white">

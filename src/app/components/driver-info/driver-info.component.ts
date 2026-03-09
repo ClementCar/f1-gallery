@@ -47,10 +47,11 @@ export class DriverInfoComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      if (this.bgContainer) {
+      if (this.bgContainer && this.current) {
         this.bgService.create(this.bgContainer.nativeElement, {
-          number: this.current?.driver.number + '' || '37',
-          primaryColor: this.current?.team.color || '#3cf2ff',
+          primaryColor: this.current.team.color ,
+          secondaryColor: this.current.team.palette[1],
+          tertiaryColor: this.current.team.palette[2]
         });
       }
       console.log(this.stats)

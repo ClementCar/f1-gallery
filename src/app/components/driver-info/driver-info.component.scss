@@ -84,35 +84,48 @@ hr{
 
 .col-img{
     position: relative;
-    & img{
+    & .picture{
         height: 130%;
         transform: translateX(10);
         margin-top: 90px;
         object-fit: cover;
         opacity: 1;
         filter: drop-shadow(0 0 0.75rem rgba(var(--light), 0.5));
-        transition: all .5s ease;
+        transition: all .5s ease .4s;
         @starting-style{
             transform: translateX(45px);
             opacity: 0;
         }
         }
+    & .number{
+        // max-height: 30%;
+        position: absolute;
+        top: 37%;
+        left: 44%;
+        transform: translate(-30%, -30%);
+        width: 150%;
+        z-index: -4;
+        opacity: 0.15;
+        max-width: none !important;
+        transition: all .5s ease-in 1s;
+        @starting-style{
+            opacity: 0;
+        }
+        
+    }
     &__mobile{
         position: absolute;
         opacity: 0.8;
+        & .number{
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+        }
         // z-index: 0;
     }
 }
 
-
-
-.number{
-    // max-height: 30%;
-    width: 100px;
-    z-index: 0;
-    margin: 0 auto;
-    opacity: 0.6;
-}
 
 ion-modal{
     --background: transparent;
@@ -131,6 +144,14 @@ ion-item-group{
     margin-top: 25px;
     background: rgba(var(--ion-color-background-rgb), 0.5);
     border-radius: 10px;
+    transition: all 1.5s ease-in-out .8s;
+    opacity: 1;
+    overflow: hidden;
+    max-height: 100%;
+    @starting-style{
+        opacity: 0;
+        max-height: 100px;
+    }
 
 }
 ion-item-divider{

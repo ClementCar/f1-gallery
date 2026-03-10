@@ -4,28 +4,28 @@ export const Teams: Team[] = [
   {
     id: 'mclaren',
     name: "McLaren",
-    color: "#F5862B", // #863400
+    color: "#ca6e22", // #863400
     palette: [ '#F5862B', '#010101', '#196685'],
     tp: { name: "Andrea", lastname: "Stella", age: 54, birthdate: new Date("1971-02-22"), image: "", nationality: { name: "Italy", image: "" } },
   },
   {
     id: 'mercedes',
     name: "Mercedes",
-    color: "#31C0B5", // #007560
+    color: "#2baca1", // #007560
     palette: ['#31C0B5', '#767676', '#2A2A2A'],
     tp: { name: "Toto", lastname: "Wolff", age: 53, birthdate: new Date("1972-01-12"), image: "", nationality: { name: "Austria", image: "AUT" } },
   },
   {
     id: 'redbull',
     name: "Red Bull Racing",
-    color: "#05207E", // #003282
+    color: "#041c72", // #003282
     palette: ['#05207E', '#E9D257', '#D91925'],
     tp: { name: "Laurent", lastname: "Mekies", age: 48, birthdate: new Date("1977-11-30"), image: "", nationality: { name: "France", image: "FRA" } },
   },
   {
     id: 'ferrari',
     name: "Ferrari",
-    color: "#A60C0D", // #710006
+    color: "#9e0b0b", // #710006
     palette: ['#A60C0D', '#DFDDDD', '#0D45C9'],
     tp: { name: "Fred", lastname: "Vasseur", age: 58, birthdate: new Date("1967-04-19"), image: "", nationality: { name: "France", image: "FRA" } },
   },
@@ -53,14 +53,14 @@ export const Teams: Team[] = [
   {
     id: 'haas',
     name: "Haas",
-    color: "#B8B8B8",
+    color: "#9c9c9c",
     palette: ['#B8B8B8', '#E21213', '#2B2B2B'],
     tp: { name: "Ayao", lastname: "Komatsu", age: 52, birthdate: new Date("1973-05-18"), image: "", nationality: { name: "Japan", image: "JPN" } },
   },
   {
     id: 'audi',
     name: "Audi",
-    color: "#F22425",
+    color: "#d12038",
     palette: ['#F22425', '#F3F1F1', '#000000'],
     tp: { name: "Jonathan", lastname: "Wheatley", age: 55, birthdate: new Date("1969-10-16"), image: "", nationality: { name: "United Kingdom", image: "GBR" } },
   },

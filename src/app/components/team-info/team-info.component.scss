@@ -5,9 +5,9 @@
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    // background: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
-    background: #F5862B;
-    background: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png"), linear-gradient(to bottom, rgba(206,219,233,1) 0%,rgba(170,197,222,1) 17%,rgba(97,153,199,1) 50%,rgba(58,132,195,1) 51%,rgba(65,154,214,1) 59%,rgba(75,184,240,1) 71%,rgba(58,139,194,1) 84%,rgba(38,85,139,1) 100%)
+    background: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+    // background: black;
+    // background: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png"), linear-gradient(to bottom, rgba(206,219,233,1) 0%,rgba(170,197,222,1) 17%,rgba(97,153,199,1) 50%,rgba(58,132,195,1) 51%,rgba(65,154,214,1) 59%,rgba(75,184,240,1) 71%,rgba(58,139,194,1) 84%,rgba(38,85,139,1) 100%)
 }
 
 ion-title{
@@ -16,128 +16,22 @@ ion-title{
     font-weight: 900;
 }
 
-.stand{
-    width: 85%;
-    height: 70%;
-    &__bar, &__boxes{
-        background: var(--ion-color-light);
-    }
-    &__bar{
-        width: 100%;
-        height: 40px;
-        margin-bottom: 15px;
-    }
-    &__boxes{
-        width: 90%;
-        height: calc(100% - 40px);
-        margin: 0 auto;
-        padding: 15px;
-        padding-bottom: 0;
-        justify-content: space-between;
-        &__box{
-          position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: calc(50% - 15px);
-            &__garage{
-                height: calc(80% - 10px);
-                width: 100%;
-                background: black;
-            }
-        }
-    }
-}
-
-.team-car{
-    position: absolute;
-    left: 50%;
-    bottom: -85px;
-    transform: translateX(-50%);
-    width: 45%;
-    opacity: 1;
-    transition: all .6s ease;
-    @starting-style{
-      transform: translateX(-75%);
-      opacity: 0;
-    }
-}
-
-
-.stand__boxes__box__garage {
-  position: relative;
-  width: 100%;
-  height: 180px;
-  background: #1a1a1d; /* base sombre du garage */
-  border-radius: 6px;
-  overflow: hidden;
-
-  /* perspective + léger bevel */
-  box-shadow: inset 0 0 25px rgba(0,0,0,0.6),
-              inset 0 0 60px rgba(0,0,0,0.85),
-              0 4px 14px rgba(0,0,0,0.35);
-}
-
-/* Ombre mur latéral gauche */
-.stand__boxes__box__garage::before {
-  content: "";
+.spot{
   position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg,
-    rgba(0,0,0,0.55) 0%,
-    rgba(0,0,0,0.25) 35%,
-    rgba(0,0,0,0) 60%
-  );
-  pointer-events: none;
-}
-
-/* Ombre mur latéral droit */
-.stand__boxes__box__garage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(-90deg,
-    rgba(0,0,0,0.50) 0%,
-    rgba(0,0,0,0.15) 35%,
-    rgba(0,0,0,0) 60%
-  );
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-
-/* Lignes horizontales au plafond (néons + structure) */
-.stand__boxes__box__garage .ceiling-lines {
-  position: absolute;
-  top: 10%;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(to right,
-    rgba(255,255,255,0.05),
-    rgba(255,255,255,0.15),
-    rgba(255,255,255,0.05)
-  );
-  box-shadow:
-    0 30px 0 rgba(255,255,255,0.04),
-    0 60px 0 rgba(255,255,255,0.03);
-}
-
-/* Glow au sol (effet LED au fond du garage) */
-.stand__boxes__box__garage .floor-light {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 140%;
-  height: 40px;
-  transform: translateX(-50%);
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255,255,255,0.12) 0%,
-    rgba(255,255,255,0.05) 30%,
-    transparent 80%
-  );
-  filter: blur(14px);
-  opacity: 0.8;
-  pointer-events: none;
+  top: -60px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 400px 171px 0px 60px;
+  border-color: #3498db transparent transparent transparent;
+  opacity: 0.6; 
+  filter: blur(20px);
+  &.spot-right{
+    right: 0;
+    transform: rotate(210deg);
+  }
+  &.spot-left{
+    left: 0;
+    transform: rotate(135deg);
+  }
 }

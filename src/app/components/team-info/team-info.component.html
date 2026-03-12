@@ -23,16 +23,24 @@
   <section class="info w-100">
   </section> -->
 
-  <section class="wall">
+  <section class="wall ion-padding" [style.--base]="team.team.color" [style.--light]="lightenDarkenColor(team.team.color, 40)" [style.--dark]="lightenDarkenColor(team.team.color, -40)">
+
     <div class="spot spot-right"></div>
     <div class="spot spot-left"></div>
-    <ion-title>{{ team.team.name | uppercase}}</ion-title>
+    <div class="spot-source spot-source-right"></div>
+    <div class="spot-source spot-source-left"></div>
+
+    <div class="title">
+      <img [src]="'/assets/teams/' + getText(team.team.name) + '/logo.avif'" [alt]="team.team.name + ' logo' ">
+      <ion-title> {{ team.team.name | uppercase}}</ion-title>
+    </div>
     <ion-row>
       @for(driver of team.drivers; track driver.name){
-        <ion-col>
+        <ion-col size="12" sizeSm="6">
           <app-driver-card [driver]="driver" [boxMode]="true" (select)="selectDriver($event)"></app-driver-card>
         </ion-col>
       }
     </ion-row>
+    <img class="team-car" [src]="'/assets/teams/' + getText(team.team.name) + '/car.avif'" [alt]="team.team.name + ' car'">
   </section>
 </ion-content>

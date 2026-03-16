@@ -10,7 +10,6 @@ L’objectif principal est de créer une interface interactive, responsive et fa
 
   - Suivre les Grands Prix au fur et à mesure
 
-  ⚠️ Important : Ce projet est 100% non officiel et n’est pas affilié à Formula 1™ ni aux équipes mentionnées. Tous les contenus utilisés sont soit générés via des APIs publiques, soit créés pour le projet.
 
 ## 🎯 Fonctionnalités prévues
 
@@ -22,6 +21,7 @@ L’objectif principal est de créer une interface interactive, responsive et fa
 
   - Interface responsive adaptée à mobile et desktop
 
+
 ## 🛠 Technologies utilisées
 
   - Frontend : Angular / Ionic
@@ -30,9 +30,11 @@ L’objectif principal est de créer une interface interactive, responsive et fa
 
 Le projet n’utilise pas de backend ni de base de données : toutes les données sont récupérées directement via les APIs.
 
+
 ## 📦 Contributions
 
 Ce projet est pour l’instant personnel, mais les suggestions ou améliorations sont les bienvenues via issues ou pull requests.
+
 
 ## ⚖️ Disclaimer légal
 
@@ -43,6 +45,7 @@ Ce projet est strictement personnel et non officiel.
   - Aucune affiliation, partenariat ou approbation par Formula 1™, les équipes, pilotes ou sponsors n’est revendiquée.
 
   - Ce projet ne doit pas être utilisé à des fins commerciales ou monétisées.
+  
 
 ## 📬 Contact 
 

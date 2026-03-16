@@ -186,3 +186,16 @@
   font-weight: 500;
   font-style: normal;
 }
+
+.blur-bg{
+  background: rgba(var(--ion-color-background-rgb), 0.2);
+  padding: 7px;
+  border-radius: 7px;
+  backdrop-filter: blur(2px);
+}
+
+.ion-blur-bg{
+  --background: rgba(var(--ion-color-background-rgb), 0.2) !important;
+  --border-radius: 7px !important;
+  backdrop-filter: blur(2px);
+}

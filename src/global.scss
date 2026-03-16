@@ -9,10 +9,10 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
 */
 
-@use "./style/mixin" as mixin;
-@use "./style/keyframes" as keyframes;
-@forward "./style/class";
-@forward "./style/default";
+@use "style/mixin" as mixin;
+@use "style/keyframes" as keyframes;
+@forward "style/class";
+@forward "style/default";
 
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";

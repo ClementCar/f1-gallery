@@ -7,7 +7,11 @@ const routes: Routes = [
   { path: '', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule) },
   { path: 'team-info/:name', component: TeamInfoComponent },
   { path: 'driver-info/:name', component: DriverInfoComponent },
-  { path: '**', redirectTo: ''}
+  { path: '**', redirectTo: ''},
+  {
+    path: 'tab-standing',
+    loadChildren: () => import('./tab-standing/tab-standing.module').then( m => m.TabStandingPageModule)
+  }
 ];
 @NgModule({
   imports: [

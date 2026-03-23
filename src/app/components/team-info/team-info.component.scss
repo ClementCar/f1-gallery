@@ -23,11 +23,12 @@
 }
 
 ion-row{
+  display: flex;
+  justify-content: center;
   width: 100%;
-}
-
-.team-car{
-  max-width: 600px;
+  & ion-col{
+    max-width: 400px !important;
+  }
 }
 
 .spot {

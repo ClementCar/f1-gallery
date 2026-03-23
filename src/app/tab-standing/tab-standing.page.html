@@ -1,0 +1,23 @@
+<ion-content class="page-content" [fullscreen]="true">
+
+  <ion-segment value="drivers" mode="ios">
+    <ion-segment-button value="drivers" content-id="drivers">
+      <ion-label>Pilotes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="teams" content-id="teams">
+      <ion-label>Equipes</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-segment-view>
+    <ion-segment-content id="drivers">
+      @for(el of standingOrder; track el.position){
+        <ion-item>{{el.Driver.driverId}}</ion-item>
+      }
+    </ion-segment-content>
+    <ion-segment-content id="teams">
+      teams
+    </ion-segment-content>
+  </ion-segment-view>
+
+</ion-content>

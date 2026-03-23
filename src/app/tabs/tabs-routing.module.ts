@@ -11,6 +11,7 @@ const routes: Routes = [
       { path: 'home', loadChildren: () => import('../tabHome/tab1.module').then(m => m.Tab1PageModule) },
       { path: 'teams', loadChildren: () => import('../tabTeams/tab2.module').then(m => m.Tab2PageModule) },
       { path: 'drivers', loadChildren: () => import('../tabDrivers/tab3.module').then(m => m.Tab3PageModule) },
+      { path: 'standings', loadChildren: () => import('../tab-standing/tab-standing.module').then(m => m.TabStandingPageModule)}
     ]
   },
 ];

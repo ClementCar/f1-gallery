@@ -41,6 +41,6 @@
         </ion-col>
       }
     </ion-row>
-    <img class="team-car" [src]="'/assets/teams/' + getText(team.team.name) + '/car.avif'" [alt]="team.team.name + ' car'">
+    <img class="team-car" [style]="`max-width: ${platform.is('mobile') ? '100%' : '600px'}`" [src]="'/assets/teams/' + getText(team.team.name) + '/car.avif'" [alt]="team.team.name + ' car'">
   </section>
 </ion-content>

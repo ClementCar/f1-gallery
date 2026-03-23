@@ -4,7 +4,8 @@
         "DESCRIPTION": "Explore les écuries et les pilotes de la formule 1 saison 2025",
         "DRIVERS": "Pilotes",
         "TEAMS": "Écuries",
-        "HOME": "Accueil"
+        "HOME": "Accueil",
+        "STANDINGS": "Classement"
     },
     "PAGE": {
         "TITLE-TEAMS": "Écuries de F1",

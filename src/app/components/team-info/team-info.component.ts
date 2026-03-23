@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Platform } from '@ionic/angular';
 import { Driver } from 'src/app/config/drivers';
 import { Team, TeamAndDriver } from 'src/app/config/teams';
 import { TeamsService } from 'src/app/services/teams-service';
@@ -18,7 +19,7 @@ export class TeamInfoComponent  implements OnInit {
   team!: TeamAndDriver;
 
   constructor(private route: ActivatedRoute, private teamService: TeamsService, private utilityService: UtilityService,
-              private transitionService: TransitionService
+              private transitionService: TransitionService, public platform: Platform
   ) { }
 
   ngOnInit() {

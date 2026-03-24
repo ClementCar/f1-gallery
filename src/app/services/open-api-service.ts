@@ -1,23 +1,44 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OpenApiService {
-  
-  // https://api.openf1.org/v1/meetings?year=2026&country_name=Singapore
-  // https://api.jolpi.ca/ergast/f1/2026/driverstandings/
-
-  // meatiing, Sessions, sting, location
+  jolpiApi: string = 'https://api.jolpi.ca/ergast/f1/'
 
   constructor( private http: HttpClient) {}
 
-  getStanding() {
+  getDriverStanding(): Observable<ApiDriverStanding[]> {
     return this.http
-      .get<any>('https://api.jolpi.ca/ergast/f1/2026/driverstandings/')
+      .get<any>(this.jolpiApi + '2026/driverstandings/')
       .pipe( map(res => res.MRData.StandingsTable.StandingsLists[0].DriverStandings))
+  }
+
+  getTeamStanding(): Observable<ApiTeamStanding[]> {
+    return this.http
+      .get<any>(this.jolpiApi + '2026/constructorstandings/')
+      .pipe( map(res => res.MRData.StandingsTable.StandingsLists[0].ConstructorStandings))
+  }
+
+}
+
+export interface ApiDriverStanding {
+  position: string,
+  points: string,
+  wins: string,
+  Driver: {
+    driverId: string
+  }
+}
+
+export interface ApiTeamStanding {
+  position: string,
+  points: string,
+  wins: string,
+  Constructor: {
+    constructorId: string
   }
 
 }

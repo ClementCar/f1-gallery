@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { OpenApiService } from '../services/open-api-service';
+import { ApiDriverStanding, ApiTeamStanding, OpenApiService } from '../services/open-api-service';
+import { TeamsService } from '../services/teams-service';
+import { Driver } from '../config/drivers';
+import { Team } from '../config/teams';
 
 @Component({
   selector: 'app-tab-standing',
@@ -8,23 +11,49 @@ import { OpenApiService } from '../services/open-api-service';
   standalone: false
 })
 export class TabStandingPage implements OnInit {
-  standingOrder: standingList[] = [];
+  driverStandings: standingDriverList[] = [];
+  constructorStandings: standginConstructorList[] = [];
 
-  constructor(private apiService: OpenApiService) { }
+  constructor(private apiService: OpenApiService, private teamService: TeamsService) { }
 
   ngOnInit() {
-    this.apiService.getStanding().subscribe((r) => {
-      this.standingOrder = r;
+    this.apiService.getDriverStanding().subscribe((drivers: ApiDriverStanding[]) => {
+      this.driverStandings = drivers.map(d => ({
+        position: d.position,
+        points: d.points,
+        wins: d.wins,
+        driver: this.teamService.getDriverById(
+          this.getDriverId(d.Driver.driverId)
+        )
+      }));
+    });
+
+    this.apiService.getTeamStanding().subscribe((constructors: ApiTeamStanding[]) => {
+      this.constructorStandings= constructors.map(d => ({
+        position: d.position,
+        points: d.points,
+        wins: d.wins,
+        constructor: this.teamService.getTeamById(d.Constructor.constructorId)
+      }))
     })
+  }
+
+  getDriverId(id: string){
+    return id.includes('_') ? id.split('_').pop()! : id;
   }
 
 }
 
-interface standingList{
+interface standingDriverList{
   position: string,
   points: string,
   wins: string,
-  Driver: {
-    driverId: string
-  }
+  driver: Driver
+}
+
+interface standginConstructorList{
+  position: string,
+  points: string,
+  wins: string,
+  constructor: Team
 }

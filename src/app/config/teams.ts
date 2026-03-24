@@ -16,7 +16,7 @@ export const Teams: Team[] = [
     tp: { name: "Toto", lastname: "Wolff", age: 53, birthdate: new Date("1972-01-12"), image: "", nationality: { name: "Austria", image: "AUT" } },
   },
   {
-    id: 'redbull',
+    id: 'red_bull',
     name: "Red Bull Racing",
     color: "#041c72", // #003282
     palette: ['#05207E', '#E9D257', '#D91925'],
@@ -37,14 +37,14 @@ export const Teams: Team[] = [
     tp: { name: "James", lastname: "Vowles", age: 45, birthdate: new Date("1980-04-19"), image: "", nationality: { name: "United Kingdom", image: "GBR" } },
   },
   {
-    id: 'racing',
+    id: 'rb',
     name: "Racing Bulls",
     color: "#062F8F", // #2345AB
     palette: ['#062F8F', '#DDDDDD', '#EFD958'],
     tp: { name: "Alan", lastname: "Permane", age: 58, birthdate: new Date("1967-02-05"), image: "", nationality: { name: "United Kingdom", image: "GBR" } },
   },
   {
-    id: 'aston',
+    id: 'aston_martin',
     name: "Aston Martin",
     color: "#0A5A43", // #00482C
     palette: ['#0A5A43', '#D0CC47', '#080806'],

@@ -3,6 +3,7 @@ import { ApiDriverStanding, ApiTeamStanding, OpenApiService } from '../services/
 import { TeamsService } from '../services/teams-service';
 import { Driver } from '../config/drivers';
 import { Team } from '../config/teams';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab-standing',
@@ -14,7 +15,7 @@ export class TabStandingPage implements OnInit {
   driverStandings: standingDriverList[] = [];
   constructorStandings: standginConstructorList[] = [];
 
-  constructor(private apiService: OpenApiService, private teamService: TeamsService) { }
+  constructor(private apiService: OpenApiService, private teamService: TeamsService, public platform: Platform) { }
 
   ngOnInit() {
     this.apiService.getDriverStanding().subscribe((drivers: ApiDriverStanding[]) => {

@@ -15,17 +15,20 @@
         
         <ion-segment-content id="drivers">
           <ion-row class="head-row">
-            <ion-col size="2">POS</ion-col>
+            <ion-col size="2" class="flex-center">POS</ion-col>
             <ion-col size="4">DRIVER</ion-col>
             <ion-col size="4">TEAM</ion-col>
-            <ion-col size="2">PTS.</ion-col>
+            <ion-col size="2" class="flex-center">PTS.</ion-col>
           </ion-row>
           @for(el of driverStandings; track el.position){
             <ion-row>
-              <ion-col size="2">{{el.position}}</ion-col>
-              <ion-col size="4">{{el.driver.name}} {{el.driver.lastname}}</ion-col>
+              <ion-col size="2" class="flex-center">{{el.position}}</ion-col>
+              <ion-col size="4">
+                {{ platform.is('mobile') ?  el.driver.name.charAt(0) + '.' : el.driver.name }} 
+                {{el.driver.lastname}}
+              </ion-col>
               <ion-col size="4">{{el.driver.teamId}}</ion-col>
-              <ion-col size="2">{{el.points}}</ion-col>
+              <ion-col size="2" class="flex-center">{{el.points}}</ion-col>
             </ion-row>
           }
         </ion-segment-content>
@@ -33,16 +36,16 @@
 
         <ion-segment-content id="teams">
           <ion-row class="head-row">
-            <ion-col size="3">POS</ion-col>
+            <ion-col size="3" class="flex-center">POS</ion-col>
             <ion-col size="7">TEAM</ion-col>
-            <ion-col size="2">PTS.</ion-col>
+            <ion-col size="2" class="flex-center">PTS.</ion-col>
           </ion-row>
 
           @for(el of constructorStandings; track el.position){
             <ion-row>
-              <ion-col size="3">{{el.position}}</ion-col>
+              <ion-col size="3" class="flex-center">{{el.position}}</ion-col>
               <ion-col size="7">{{el.constructor.name}}</ion-col>
-              <ion-col size="2">{{el.points}}</ion-col>
+              <ion-col size="2" class="flex-center">{{el.points}}</ion-col>
             </ion-row>
           }
 

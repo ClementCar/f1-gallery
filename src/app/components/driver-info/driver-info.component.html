@@ -1,4 +1,7 @@
 <ion-content class="page-content" [fullscreen]="true">
+
+  <app-back-button></app-back-button>
+
   <div class="w-100 h-100 bgContainer" #bgContainer></div>
   @if (current) {
     <ion-row class="h-100" [style.--base]="current.team.color" [style.--light]="lightenDarkenColor(current.team.color, 40)" 

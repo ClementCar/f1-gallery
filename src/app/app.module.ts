@@ -17,6 +17,7 @@ import { TeamInfoComponent } from './components/team-info/team-info.component';
 import { DriverCardComponent } from './components/driver-card/driver-card.component';
 import { LottieComponent, provideLottieOptions } from 'ngx-lottie';
 import player from 'lottie-web';
+import { BackButtonComponent } from './components/back-button/back-button.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -25,7 +26,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, DriverInfoComponent, TeamInfoComponent ],
+  declarations: [AppComponent, DriverInfoComponent, TeamInfoComponent, BackButtonComponent ],
   imports: [
     BrowserModule, 
     IonicModule.forRoot({

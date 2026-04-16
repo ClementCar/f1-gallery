@@ -1,0 +1,30 @@
+ion-button{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  --background: rgba(var(--ion-color-primary-rgb), 0.5);
+  --border-radius: 20px;
+  --border-width: 1px;
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 10;
+  transition: all .6s ease .5s;
+  --padding-start: 7px;
+  --padding-end: 7px;
+  --padding-top: 7px;
+  --padding-bottom: 7px;
+
+  @starting-style{
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+
+ion-button::part(native){
+  transition: all .2s ease;
+  transform: scale(1);
+}
+
+ion-button:hover::part(native){
+  transform: scale(1.12);
+}

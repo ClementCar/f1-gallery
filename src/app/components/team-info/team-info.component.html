@@ -1,40 +1,13 @@
 <ion-content class="page-content" [fullscreen]="true">
-  <!-- <section class="wall" [style.--base]="team.team.color" [style.--light]="lightenDarkenColor(team.team.color, 40)" [style.--dark]="lightenDarkenColor(team.team.color, -40)">
-    <ion-title>{{ team.team.name | uppercase}}</ion-title>
-    <div class="stand">
-      <div class="stand__bar"></div>
-      <div class="stand__boxes flex">
-        @for (driver of team.drivers; track driver.name) {
-          <div class="stand__boxes__box">
-
-            <app-driver-card [driver]="driver" [boxMode]="true" (select)="selectDriver($event)"></app-driver-card>
-
-            <div class="stand__boxes__box__garage">
-              <div class="ceiling-lines"></div>
-              <div class="floor-light"></div>
-            </div>
-
-          </div>
-        }
-      </div>
-    </div>
-    <img class="team-car" [src]="'/assets/teams/' + getText(team.team.name) + '/car.avif'" [alt]="team.team.name + ' car'">
-  </section>
-  <section class="info w-100">
-  </section> -->
 
   <section class="wall ion-padding" [style.--base]="team.team.color" [style.--light]="lightenDarkenColor(team.team.color, 40)" [style.--dark]="lightenDarkenColor(team.team.color, -40)">
 
     <app-back-button></app-back-button>
 
-    <div class="spot spot-right" [style.transform]="`rotate(${spotRightRadius}deg)`"></div>
-    <div class="spot spot-left" [style.transform]="`rotate(${spotLeftRadius}deg)`"></div>
-    <div class="spot-source spot-source-right"></div>
-    <div class="spot-source spot-source-left"></div>
-
     <div class="title">
       <img [src]="'/assets/teams/' + getText(team.team.name) + '/logo.avif'" [alt]="team.team.name + ' logo' ">
       <ion-title> {{ team.team.name | uppercase}}</ion-title>
+      <h2>FORMULA ONE TEAM - 2026</h2>
     </div>
     <ion-row>
       @for(driver of team.drivers; track driver.name){

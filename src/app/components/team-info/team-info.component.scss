@@ -66,3 +66,13 @@ ion-row{
     max-width: 400px !important;
   }
 }
+
+.team-car{
+  transform: translateX(0);
+  opacity: 1;
+  transition: all .6s ease 1s;
+  @starting-style{
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+}

@@ -2,33 +2,35 @@
 
   <app-back-button></app-back-button>
 
-  <div class="w-100 h-100 bgContainer" #bgContainer></div>
   @if (current) {
     <ion-row class="h-100" [style.--base]="current.team.color" [style.--light]="lightenDarkenColor(current.team.color, 40)" 
             [style.--dark]="lightenDarkenColor(current.team.color, -40)">
-      <ion-col size="12" sizeMd="8" class="flex">
+      <ion-col size="12" sizeMd="8" class="flex col-pad">
 
-        <div class="col-info" [class.col-info__mobile]="platform.is('mobile')">
+        <div class="col-info col-pad" [class.col-info__mobile]="platform.is('mobile')">
           <div class="driver-title" [class.driver-title__mobile]="platform.is('mobile')">
             <h2 class="name windsong-regular">{{ current.driver.name }}</h2>
             <h2 class="surname audiowide-regular">{{ current.driver.lastname }}</h2>
           </div>
 
-          <div class="ion-margin-top driver-bio">
+          <div class="ion-margin-top col-pad driver-bio">
             <!-- <p>BIO</p> -->
             <p class="ion-margin-top">{{current.team.name}}</p>
             <p class="ion-margin-top bio">{{current.driver.bio | translate}}</p>
           </div>
         </div>
 
-        <div class="col-img" [class.col-img__mobile]="platform.is('mobile')">
+        <div class="sidebar"></div>
+
+        <div class="col-img col-pad" [class.col-img__mobile]="platform.is('mobile')">
           <img class="picture" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/picture.avif'" alt="">
           <img class="number" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
         </div>
+
       </ion-col>
 
       @if (!platform.is('mobile')) {
-        <ion-col size="4" class="flex-column ion-justify-content-center ion-align-items-center">
+        <ion-col size="4" class="flex-column ion-justify-content-center ion-align-items-center ion-no-padding">
           <ion-item-group class="w-100">
             <ion-item-divider>
               <img src="/assets/logo/f1-logo-white.svg" class="logo-white" alt="F1 logo white">

@@ -178,3 +178,80 @@ ion-list{
     display: flex;
     justify-content: end;
 }
+
+ion-toolbar.toolbarHome{
+  --background: transparent;
+  border-bottom: none;
+  & h1{
+    color:black;
+  }
+  & ion-button{
+    color: black !important;
+  }
+  & ion-button.btn-darkgray{
+    --background: #4F4F4F !important;
+    & p {
+      color: white;
+    }
+  }
+}
+
+ion-buttons {
+  ion-button.desk {
+    color: var(--ion-color-dark);
+    --border-radius: 25px;
+    font-size: 12px;
+    height: 40px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+  }
+}
+
+ion-button.btn-log {
+  --background: transparent;
+  --box-shadow: none;
+  @include --border-radius;
+  color: var(--ion-color-dark);
+  font-size: 20px;
+  margin-right: 7px;
+}
+
+ion-button.btn-menu {
+  --color: var(--ion-color-dark);
+  margin-right: 5px;
+  width: 32px;
+}
+
+ion-button.border-light{
+  --border-width: 2px;
+  --border-style: solid;
+  --border-color: var(--ion-color-light);
+}
+
+// !TS
+ion-button.bt-menu {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  width: 70px;
+  height: 25px;
+  margin: 0;
+  @include transform-centerX;
+  border: 1px solid var(--ion-color-lightplus);
+  border-top-color: var(--ion-color-white);
+  border-radius: 0 0 50px 50px;
+  background: var(--ion-color-white);
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  & fa-icon {
+    transition: all 0.3s ease;
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+ion-action-sheet {
+  --button-color: var(--ion-color-dark);
+}

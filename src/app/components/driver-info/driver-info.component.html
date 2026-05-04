@@ -3,55 +3,60 @@
   <app-back-button></app-back-button>
 
   @if (current) {
-    <ion-row class="h-100" [style.--base]="current.team.color" [style.--light]="lightenDarkenColor(current.team.color, 40)" 
-            [style.--dark]="lightenDarkenColor(current.team.color, -40)">
+    <ion-row class="global-row h-100" [style.--base]="current.team.color" [style.--light]="lightenDarkenColor(current.team.color, 40)" 
+            [style.--dark]="lightenDarkenColor(current.team.color, -40)" [style.--src-image]="`url('/assets/drivers/${getLower(current.driver.lastname)}/number.avif')`">
       <ion-col size="12" sizeMd="8" class="flex col-pad">
 
         <div class="col-info col-pad" [class.col-info__mobile]="platform.is('mobile')">
+          <div class="number"></div>
           <div class="driver-title" [class.driver-title__mobile]="platform.is('mobile')">
             <h2 class="name windsong-regular">{{ current.driver.name }}</h2>
             <h2 class="surname audiowide-regular">{{ current.driver.lastname }}</h2>
           </div>
 
+          <ion-button class="team-btn padding-btn-5" (click)="selectTeam()">
+            <img [src]="'/assets/teams/' + current.team.id + '/logo.avif'" alt="">
+            <p>{{current.team.name}} F1 Team</p>
+          </ion-button>
+
           <div class="ion-margin-top col-pad driver-bio">
-            <!-- <p>BIO</p> -->
-            <p class="ion-margin-top">{{current.team.name}}</p>
             <p class="ion-margin-top bio">{{current.driver.bio | translate}}</p>
           </div>
         </div>
+
+        <img class="img-number" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
 
         <div class="sidebar"></div>
 
         <div class="col-img col-pad" [class.col-img__mobile]="platform.is('mobile')">
           <img class="picture" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/picture.avif'" alt="">
-          <img class="number" [src]="'/assets/drivers/' + getLower(current.driver.lastname) + '/number.avif'" alt="">
         </div>
 
       </ion-col>
 
       @if (!platform.is('mobile')) {
-        <ion-col size="4" class="flex-column ion-justify-content-center ion-align-items-center ion-no-padding">
-          <ion-item-group class="w-100">
-            <ion-item-divider>
+        <ion-col size="4" class="col-stat ion-padding">
+          <ion-row class="head-row">
+            <ion-col size="3">
               <img src="/assets/logo/f1-logo-white.svg" class="logo-white" alt="F1 logo white">
-              <ion-label slot="end">{{ 'PAGE.STAT' | translate }}</ion-label>
-            </ion-item-divider>
+            </ion-col>
+            <ion-col size="9" class="flex ion-justify-content-end">
+              {{ 'PAGE.STAT' | translate }}
+            </ion-col>
+          </ion-row>
+          @for (stat of stats; track $index) {
 
-            @for (stat of stats; track $index) {
-              <ion-item lines="none">
-                <ion-label class="label">{{ `STAT.${stat.key}` | translate }}</ion-label>
-                <ion-label class="stat">
-                  {{ stat.value }}
-
-                  @if ( stat.count ) {
-                    <p class="stat__count"> ({{stat.count}})</p>
-                  }
-
-                </ion-label>
-              </ion-item>
-            }
-
-          </ion-item-group>
+            <ion-row class="">
+              <ion-col class="label" size="8">{{ `STAT.${stat.key}` | translate }}</ion-col>
+              <ion-col class="stat flex ion-justify-content-end">
+                {{stat.value}}
+                @if(stat.count){
+                  <!-- <p class="stat__count">{{stat.count}}</p> -->
+                  <ion-note>{{stat.count}}</ion-note>
+                }
+              </ion-col>
+            </ion-row>
+          }
       </ion-col>
       }
 
@@ -70,20 +75,21 @@
           <img src="/assets/logo/f1-logo-white.svg" class="logo-white" alt="F1 logo white">
           <ion-label slot="end">{{ 'PAGE.STAT' | translate }}</ion-label>
         </ion-item>
-        <ion-list>
-          @for (stat of stats; track stat.key) {
-          <ion-item lines="none">
-            <ion-label class="label">{{ `STAT.${stat.key}` | translate }}</ion-label>
-            <ion-label class="stat">
-              {{ stat?.value }}
-              @if ( stat.count ) {
-                <p class="stat__count"> ({{stat.count}})</p>
-              }
-            </ion-label>
-          </ion-item>
 
-        }
-        </ion-list>
+         <!-- ! REWORK MOBILE STAT LIKE SCARE  -->
+
+        @for (stat of stats; track stat.key) {
+          <ion-row class="ion-padding">
+            <ion-col class="label" size="8">{{ `STAT.${stat.key}` | translate }}</ion-col>
+            <ion-col class="stat flex ion-justify-content-end">
+              {{stat.value}}
+              @if(stat.count){
+                <ion-note class="stat__count">{{stat.count}}</ion-note>
+              }
+            </ion-col>
+          </ion-row>
+          }
+
       </ion-content>
     </ng-template>
   </ion-modal>

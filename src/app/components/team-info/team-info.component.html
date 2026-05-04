@@ -5,7 +5,7 @@
     <app-back-button></app-back-button>
 
     <div class="title">
-      <img [src]="'/assets/teams/' + getText(team.team.name) + '/logo.avif'" [alt]="team.team.name + ' logo' ">
+      <img [src]="'/assets/teams/' + team.team.id + '/logo.avif'" [alt]="team.team.name + ' logo' ">
       <ion-title> {{ team.team.name | uppercase}}</ion-title>
       <h2>FORMULA ONE TEAM - 2026</h2>
     </div>
@@ -16,6 +16,6 @@
         </ion-col>
       }
     </ion-row>
-    <img class="team-car" [style]="`max-width: ${platform.is('mobile') ? '100%' : '600px'}`" [src]="'/assets/teams/' + getText(team.team.name) + '/car.avif'" [alt]="team.team.name + ' car'">
+    <img class="team-car" [style]="`max-width: ${platform.is('mobile') ? '100%' : '600px'}`" [src]="'/assets/teams/' + team.team.id + '/car.avif'" [alt]="team.team.name + ' car'">
   </section>
 </ion-content>

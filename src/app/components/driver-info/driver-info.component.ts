@@ -5,6 +5,7 @@ import { Driver } from 'src/app/config/drivers';
 import { Team } from 'src/app/config/teams';
 import { AnimatedBackgroundService } from 'src/app/services/animated-background-service';
 import { TeamsService } from 'src/app/services/teams-service';
+import { TransitionService } from 'src/app/services/transition-service';
 import { UtilityService } from 'src/app/services/utility';
 
 @Component({
@@ -25,7 +26,8 @@ export class DriverInfoComponent implements OnInit, AfterViewInit {
     private activatedRoute: ActivatedRoute,
     private teamService: TeamsService,
     private bgService: AnimatedBackgroundService,
-    public platform: Platform
+    public platform: Platform,
+    private transitionService: TransitionService
   ) {}
 
   ngOnInit() {
@@ -54,6 +56,10 @@ export class DriverInfoComponent implements OnInit, AfterViewInit {
 
   getLower(name: string) {
     return this.utilityService.getLowerText(name);
+  }
+
+  selectTeam(){
+    this.transitionService.navigate(['team-info', this.current?.team.name]);
   }
 }
 

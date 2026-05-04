@@ -10,8 +10,8 @@
           <ion-card-header>
             <ion-card-title class="exo-2-500">{{ team.name }}</ion-card-title>
           </ion-card-header>
-          <img class="logo" [src]="'/assets/teams/' + getText(team.name) + '/bg-logo.png'" [alt]="team.name + ' logo'"> 
-          <img class="car" [src]="'/assets/teams/' + getText(team.name) + '/car.avif'" [alt]="team.name + ' car'">
+          <img class="logo" [src]="'/assets/teams/' + team.id + '/bg-logo.png'" [alt]="team.name + ' logo'"> 
+          <img class="car" [src]="'/assets/teams/' + team.id + '/car.avif'" [alt]="team.name + ' car'">
         </ion-card>
       </ion-col>
     }

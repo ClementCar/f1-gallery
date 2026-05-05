@@ -46,7 +46,7 @@
           </ion-row>
           @for (stat of stats; track $index) {
 
-            <ion-row class="">
+            <ion-row class="row-stat">
               <ion-col class="label" size="8">{{ `STAT.${stat.key}` | translate }}</ion-col>
               <ion-col class="stat flex ion-justify-content-end">
                 {{stat.value}}

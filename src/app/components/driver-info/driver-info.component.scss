@@ -16,11 +16,21 @@ ion-row.global-row{
     & .name{
         font-size: 40px;
         line-height: 0.2;
+        opacity: 1;
+        transition: all .4s ease .4s;
+        @starting-style{
+            opacity: 0;
+        }
     }
     & .surname{
         font-weight: 700;
         font-size: 35px;
         text-transform: uppercase;
+        opacity: 1;
+        transition: all .4s ease .8s;
+        @starting-style{
+            opacity: 0;
+        }
     }
     // &__mobile{
     //     display: flex;
@@ -33,10 +43,10 @@ ion-row.global-row{
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
     width: 300px;
     z-index: 2;
+    padding: 10% 0;
     & .number{
         height: 40px;
         width: 40px;
@@ -48,17 +58,25 @@ ion-row.global-row{
         opacity: 0.8;
         mask: var(--src-image) no-repeat center / contain;
         -webkit-mask: var(--src-image) no-repeat center / contain;
+        transition: all .4s ease 2s;
+        @starting-style{
+            opacity: 0;
+        }
     }
     & .driver-bio{
         font-size: 16px;
+        margin-top: auto;
         color: var(--ion-color-white-shade);
+        transition: all .4s ease 1.6s;
         & .bio{
             font-family: "Exo 2", sans-serif;
+        }
+        @starting-style{
+            opacity: 0;
         }
     }
     &__mobile{
         width: 100%;
-        justify-content: unset;
         & .driver-bio{
             margin: auto 0;
             padding: 20px;
@@ -77,9 +95,14 @@ ion-button.team-btn{
     --border-width: 1px;
     --border-style: solid;
     --border-color: var(--base);
+    opacity: 1;
+    transition: all .4s ease 1.2s;
     & img{
         width: 20px;
         margin-right: 5px;
+    }
+    @starting-style{
+        opacity: 0;
     }
 }
 
@@ -93,7 +116,7 @@ ion-button.team-btn{
         object-fit: cover;
         opacity: 1;
         filter: drop-shadow(0 0 0.75rem rgba(var(--light), 0.5));
-        transition: all .5s ease .4s;
+        transition: all .5s ease 2s;
         @starting-style{
             transform: translateX(45px);
             opacity: 0;
@@ -116,10 +139,6 @@ ion-button.team-btn{
     height: 80%;
     max-width: 90%;
     object-fit: contain;
-    transition: all .5s ease-in 1s;
-    @starting-style{
-        opacity: 0;
-    }
 }
 
 .sidebar {
@@ -135,6 +154,10 @@ ion-button.team-btn{
     transparent 100%
   );
   opacity: 0.85;
+  transition: all .4s ease 2s;
+  @starting-style{
+    height: 0;
+  }
 }
 
 
@@ -159,18 +182,27 @@ ion-modal{
 ion-row.head-row{
     font-size: 12px;
     color: var(--ion-color-lightplus);
+    height: 10%;
 }
 
 ion-col.col-stat{
     background: rgba(var(--ion-color-background-rgb), 0.8);
-    transition: all 1.5s ease-in-out .8s;
+    transition: all .4s ease-in-out 2s;
     opacity: 1;
     overflow: hidden;
     height: 100%;
     max-height: 100%;
+    transform: translateX(0);
+    & ion-col{
+        font-family: "Exo 2", sans-serif !important;
+    }
     @starting-style{
         opacity: 0;
-        max-height: 100px;
+        transform: translateX(100%);
     }
 
+}
+
+ion-row.row-stat{
+    height: 10%;
 }

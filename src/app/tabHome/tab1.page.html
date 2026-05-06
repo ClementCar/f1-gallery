@@ -3,14 +3,18 @@
   <section class="flex-column-center w-100 h-100">
     <h1 class="title blur-bg">{{ 'HOME.TITLE' | translate }}</h1>
 
+    <div class="bar"></div>
+
     <ion-buttons>
       <ion-button class="btn-left ion-blur-bg" routerLink="/teams" >{{ 'HOME.TEAMS' | translate }}</ion-button>
       <ion-button class="btn-right ion-blur-bg" routerLink="/drivers" >{{ 'HOME.DRIVERS' | translate }}</ion-button>
+      <ion-button class="btn-stanting ion-blur-bg" routerLink="/standings">{{ 'HOME.STANDINGS' | translate }}</ion-button>
     </ion-buttons>
     
     <ion-button class="btn-sound" color="white" fill="clear" (click)="changeVolume()">
       <ion-icon [name]="muted ? 'volume-mute-outline' : 'volume-high-outline' "></ion-icon>
     </ion-button>
+
   </section>
 
 </ion-content>

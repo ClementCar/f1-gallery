@@ -36,11 +36,5 @@ export class AppComponent {
     this.transition.setAnimation(this.anim);
     this.anim.setSpeed(1.8);
 
-    // this.anim.addEventListener('complete', () => {
-    //   if(this.transition.leaving()){
-    //     this.transition.visible.set(false);
-    //     this.transition.leaving.set(false);
-    //   }
-    // })
   }
 }

@@ -27,13 +27,6 @@ export class AnimatedBackgroundService implements OnInit {
       position: 'relative',
       width: '100%',
       height: '100%',
-      // background:
-      //   `radial-gradient(
-      //     circle at 40% 30%,
-      //     rgba(255,255,255,0.06) 0%,
-      //     rgba(10,14,20,0.9) 35%,
-      //     #05070a 70%
-      //   )`,
       overflow: 'hidden',
     });
 
@@ -42,8 +35,6 @@ export class AnimatedBackgroundService implements OnInit {
     this.apply(noise, {
       position: 'absolute',
       inset: '0',
-      // backgroundImage:
-      //   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E\")",
       backgroundImage: 'url("https://www.transparenttextures.com/patterns/always-grey.png")',
       mixBlendMode: 'overlay',
       pointerEvents: 'none',

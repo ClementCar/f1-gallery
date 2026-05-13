@@ -518,8 +518,3 @@ export interface Nationality {
   name: string;
   image: string;
 }
-
-// export interface Stat {
-//     label: string,
-//     number: string
-// }

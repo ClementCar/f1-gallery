@@ -19,14 +19,31 @@ export class TabStandingPage implements OnInit {
 
   ngOnInit() {
     this.apiService.getDriverStanding().subscribe((drivers: ApiDriverStanding[]) => {
-      this.driverStandings = drivers.map(d => ({
-        position: d.position,
-        points: d.points,
-        wins: d.wins,
-        driver: this.teamService.getDriverById(
+      this.driverStandings = drivers.map(d => {
+        const teamData = this.teamService.getDriverWithHisTeamByDriverId(
           this.getDriverId(d.Driver.driverId)
-        )
-      }));
+        );
+
+        return{
+          position: d.position,
+          points: d.points,
+          wins: d.wins,
+          driver: teamData.driver,
+          team: teamData.team
+        }
+        
+        
+        
+        // return{
+        //   position: d.position,
+        //   points: d.points,
+        //   wins: d.wins,
+        //   driver: this.teamService.getDriverById(
+        //     this.getDriverId(d.Driver.driverId)
+        //   ),
+        //   team:
+        // } 
+      });
     });
 
     this.apiService.getTeamStanding().subscribe((constructors: ApiTeamStanding[]) => {
@@ -49,7 +66,8 @@ interface standingDriverList{
   position: string,
   points: string,
   wins: string,
-  driver: Driver
+  driver: Driver,
+  team: Team
 }
 
 interface standginConstructorList{

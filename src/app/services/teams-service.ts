@@ -66,6 +66,18 @@ export class TeamsService {
     }
   }
 
+  getDriverWithHisTeamByDriverId(id: string): {team: Team, driver: Driver} {
+    const driver = this.getDriverById(id);
+    if(!driver){
+      throw new Error(`Team not found for name: ${id}`)
+    }
+    const team = this.getTeamById(driver.teamId);
+    return{
+      team,
+      driver
+    }
+  }
+
   getOneDriverWithTeam(name: string): {team: Team, driver: Driver} {
     const driver = this.getDriverByName(name);
     if(!driver){

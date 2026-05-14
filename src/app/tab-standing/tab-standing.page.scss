@@ -10,3 +10,16 @@ ion-content{
 ion-col{
     font-family: "Anta", sans-serif;
 }
+
+ion-avatar{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    overflow: hidden;
+    & img{
+        position: absolute;
+        top: 1%;
+        height: max-content;
+    }
+}

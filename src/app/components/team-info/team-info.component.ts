@@ -28,7 +28,7 @@ export class TeamInfoComponent  implements OnInit {
 
   ngOnInit() {
     this.name = this.route.snapshot.paramMap.get('name')!;
-    this.team = this.team = this.teamService.getOneTeamWithDriver(this.name);
+    this.team = this.teamService.getOneTeamWithDriver(this.name);
 
     const minWidth = 320;
     const maxWidth = 1600;

@@ -68,7 +68,7 @@
 </ion-content>
 
 @if (platform.is('mobile') && stats && current) {
-  <ion-modal trigger="open-modal" [initialBreakpoint]="0.1" isOpen="true" mode="ios" expandToScroll="true" [breakpoints]="[0.1, 0.7]" [backdropDismiss]="false">
+  <ion-modal trigger="open-modal" [initialBreakpoint]="0.1" isOpen="true" mode="ios" expandToScroll="true" [showBackdrop]="false" [breakpoints]="[0.1, 0.7]" [backdropDismiss]="false">
     <ng-template>
       <ion-content>
         <ion-item>

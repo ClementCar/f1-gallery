@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { Driver } from 'src/app/config/drivers';
 import { Team } from 'src/app/config/teams';
 import { AnimatedBackgroundService } from 'src/app/services/animated-background-service';
@@ -27,7 +27,8 @@ export class DriverInfoComponent implements OnInit, AfterViewInit {
     private teamService: TeamsService,
     private bgService: AnimatedBackgroundService,
     public platform: Platform,
-    private transitionService: TransitionService
+    private transitionService: TransitionService,
+    private modalCtrl: ModalController
   ) {}
 
   ngOnInit() {
@@ -44,10 +45,12 @@ export class DriverInfoComponent implements OnInit, AfterViewInit {
       { key: 'CHAMPION', value: this.current.driver.stat.champion },
       { key: 'DNF', value: this.current.driver.stat.dnf },
     ];
+
+    this.modalCtrl.getTop();
   }
 
   ngAfterViewInit(): void {
-    
+    // this.modalCtrl.getTop()
   }
 
   lightenDarkenColor(color: string, amt: number) {
@@ -59,6 +62,7 @@ export class DriverInfoComponent implements OnInit, AfterViewInit {
   }
 
   selectTeam(){
+    this.modalCtrl.dismiss();
     this.transitionService.navigate(['team-info', this.current?.team.name]);
   }
 }
